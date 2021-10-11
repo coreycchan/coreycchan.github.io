@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<style>
+    .headerAisle {
+        padding: 60px;
+        font-size: 30px;
+        font-family: "Times New Roman", Times, serif;
+        color: #2C3539;
+        text-align: center;
+        background-image: url("https://thumbs.dreamstime.com/z/supermarket-interior-flat-vector-illustration-grocery-store-shelves-food-products-cartoon-food-shop-aisle-bakery-meat-166466892.jpg")
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Float four columns side by side */
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    /* Remove extra left and right margins, due to padding */
+    .row {
+        margin: 0 -5px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Style the counter cards */
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #FFE5B4;
+        color: black;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+</style>
+
+<div class="headerAisle">
+    <h1>Aisles</h1>
+    <h2>Find your items quickly</h2>
+    <br>
+
+</div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E">
+<body>
+    <h2>Choose a Baking product:</h2>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3>Cupcake</h3>
+                <img src="http://cdn.sallysbakingaddiction.com/wp-content/uploads/2019/05/yellow-cupcakes-with-chocolate-frosting-sprinkles.jpg" width="50"
+                    height="50">
+                    <br>
+                    <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                        <span class="tooltiptext">A perfect pastry for a sweet tooth</span>
+                    </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Chocolate Cake</h3>
+                <img src="https://thestayathomechef.com/wp-content/uploads/2016/06/The-Most-Amazing-Chocolate-Cake-Square-1.jpg"
+                    width="50" height="50">
+                    <br>
+                    <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                        <span class="tooltiptext">Chocolate cake, soft and gooey</span>
+                    </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Yeast</h3>
+                <img src="https://www.thespruceeats.com/thmb/64vTHKy0mTQPwVq_FoUmJAaS8Cw=/400x300/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-126372759-5ad8ae58a9d4f9003d94e9a0.jpg"
+                    width="50" height="50">
+                    <br>
+                    <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                        <span class="tooltiptext">Yeast to make your bread rise!</span>
+                    </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Brownie mix</h3>
+                <img src="https://i5.walmartimages.ca/images/Enlarge/044/708/999999-65633044708.jpg"
+                    width="50" height="50">
+                    <br>
+                    <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                        <span class="tooltiptext">Fun and delicious brownies for the whole family</span>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
