@@ -1,5 +1,57 @@
 <!DOCTYPE html>
 <style>
+.header {
+        padding: 60px;
+        font-size: 30px;
+        font-family: "Times New Roman", Times, serif;
+        color: #2C3539;
+        text-align: center;
+        background-image: url("https://thumbs.dreamstime.com/z/supermarket-interior-flat-vector-illustration-grocery-store-shelves-food-products-cartoon-food-shop-aisle-bakery-meat-166466892.jpg")
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+    }
     .headerAisle {
         padding: 60px;
         font-size: 30px;
@@ -77,6 +129,8 @@
         visibility: visible;
     }
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="headerAisle">
     <h1>Aisles</h1>
@@ -97,7 +151,7 @@
                     height="50">
                     <br>
                     <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                        <span class="tooltiptext">A perfect pastry for a sweet tooth</span>
+                        <span class="tooltiptext">2% milk to make your bones strong</span>
                     </div>
             </div>
         </div>
@@ -105,23 +159,23 @@
         <div class="column">
             <div class="card">
                 <h3>Feta Cheese</h3>
-                <img src="https://thestayathomechef.com/wp-content/uploads/2016/06/The-Most-Amazing-Chocolate-Cake-Square-1.jpg"
+                <img src="https://myquietkitchen.com/wp-content/uploads/2021/04/Vegan-Feta-Cheese-Oil-Free-500x375.jpg"
                     width="50" height="50">
                     <br>
                     <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                        <span class="tooltiptext">Chocolate cake, soft and gooey</span>
+                        <span class="tooltiptext">Crumbly cheese, perfect for a salad</span>
                     </div>
             </div>
         </div>
 
         <div class="column">
             <div class="card">
-                <h3>Mozzarella</h3>
-                <img src="https://www.thespruceeats.com/thmb/64vTHKy0mTQPwVq_FoUmJAaS8Cw=/400x300/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-126372759-5ad8ae58a9d4f9003d94e9a0.jpg"
+                <h3>Mozarella</h3>
+                <img src="http://www.mayrand.ca/globalassets/mayrand/catalog-mayrand/produits-laitiers/09114_mozzarella-rapee-20-racolli.jpg"
                     width="50" height="50">
                     <br>
                     <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                        <span class="tooltiptext">Yeast to make your bread rise!</span>
+                        <span class="tooltiptext">Grated cheese for all kinds of toppings</span>
                     </div>
             </div>
         </div>
@@ -129,13 +183,39 @@
         <div class="column">
             <div class="card">
                 <h3>Yogurt</h3>
-                <img src="https://i5.walmartimages.ca/images/Enlarge/044/708/999999-65633044708.jpg"
+                <img src="https://simplyhomecooked.com/wp-content/uploads/2021/08/yogurt-parfait-4.jpg"
                     width="50" height="50">
                     <br>
                     <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                        <span class="tooltiptext">Fun and delicious brownies for the whole family</span>
+                        <span class="tooltiptext">Healthy and delicious fruity yogurt</span>
                     </div>
             </div>
         </div>
     </div>
+    <button onclick="location.href = 'homepage.html'"
+        style="background-color: transparent; position: absolute; top: 20px; right: 20px; font-size:35px"><i
+            class="fa fa-home"></i></button>
+
+    <html lang="en">
+    
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="login.html">Login</a>
+        <a href="shoppingcart.html">Shopping Cart</a>
+        <a href="aisles.html">Aisles</a>
+        <a href="signup.html">Sign Up</a>
+        
+    </div>
+    <span style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
+        onclick="openNav()">&#9776; MENU</span>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </body>
