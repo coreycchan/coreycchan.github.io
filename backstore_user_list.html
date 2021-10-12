@@ -128,67 +128,85 @@
     .tooltip:hover .tooltiptext {
         visibility: visible;
     }
+
+    .dropdown {
+        display: inline-block;
+        position: relative;
+    }
+    .dropdown-content {
+        display: none;
+        background-color: white;
+        position: absolute;
+        width: 100%;
+        overflow: auto;
+        box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+        }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown-content a {
+        display: block;
+        color: #000000;
+        padding: 5px;
+        text-decoration: none;
+    }
+    .dropdown-content a:hover {
+        color: #FFFFFF;
+        background-color: #00A4BD;
+    }
+
 </style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="headerAisle">
-    <h1>Aisles</h1>
-    <h2>Find your items quickly</h2>
-    <br>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E">
 
-</div>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <div class="headerAisle">
+        <h1>Back Store</h1>
+        <h2>User List</h2>
+        <br>
+    </div>
+
+</head>
+
 <body>
-    <h2>Choose a Meat product:</h2>
+        
 
     <div class="row">
         <div class="column">
             <div class="card">
-                <h3>Ribeye <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                    <span class="tooltiptext">Tender steaks for the whole family</span>
-                </div></h3>
-                <h5>Price: 5.00$</h5>
-                <img src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml" width="50"
-                    height="50">
-                    <br>
+                <div class="dropdown">
+                    <button> Configure <span class="glyphicon glyphicon-plus-sign"></span></button>
+                    <div class="dropdown-content">
+                        <a href="backstore_add_user.html">Add</a>
+                        <a href="#">Edit</a>
+                        <a href="#">Delete</a>
+                    </div>
+                </div>
+                <h3>First Name: Corey Last Name: Chan </h3>
+                <h5>Address: 18114 Elkas Boulevard</h5>
+                <h5>User ID: 40065361</h5>
             </div>
         </div>
 
         <div class="column">
             <div class="card">
-                <h3>Pork Chop <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                    <span class="tooltiptext">Tender piece of pork, great for grilling</span>
-                </div></h3>
-                <h5>Price: 5.00$</h5>
-                <img src="https://www.foodnetwork.com/content/dam/images/food/video/2019/6/3/0/0181847-pork-chops-s4x3.jpg"
-                    width="50" height="50">
-                    <br>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <h3>Chicken Breast <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                    <span class="tooltiptext">Easy to cook, delicious for the whole family</span>
-                </div></h3>
-                <h5>Price: 5.00$</h5>
-                <img src="https://www.foodiecrush.com/wp-content/uploads/2018/08/Instant-Pot-Chicken-Breasts-foodiecrush.com-006A.jpg"
-                    width="50" height="50">
-                    <br>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <h3>Turkey <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                    <span class="tooltiptext">Great turkey prices and sizes for the holidays</span>
-                </div></h3>
-                <h5>Price: 5.00$</h5>
-                <img src="https://i5.walmartimages.ca/images/Large/329/793/6000203329793.jpg"
-                    width="50" height="50">
-                    <br>
+                <div class="dropdown">
+                    <button> Configure <span class="glyphicon glyphicon-plus-sign"></span></button>
+                    <div class="dropdown-content">
+                        <a href="backstore_add_user.html">Add</a>
+                        <a href="#">Edit</a>
+                        <a href="#">Delete</a>
+                    </div>
+                </div>
+                <h3>First Name: Felix Last Name: Wong </h3>
+                <h5>Address: 2854 Rue Gaetan-Labreche</h5>
+                <h5>User ID: 40092894</h5>
             </div>
         </div>
     </div>
@@ -217,6 +235,30 @@
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
+        }
+
+        function changeLanguage(language) {
+            var element = document.getElementById("url");
+            element.value = language;
+            element.innerHTML = language;
+        }
+
+        function showDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
         }
     </script>
 </body>
