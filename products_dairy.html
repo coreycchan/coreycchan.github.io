@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <style>
-.header {
+    .header {
         padding: 60px;
         font-size: 30px;
         font-family: "Times New Roman", Times, serif;
@@ -128,6 +128,74 @@
     .tooltip:hover .tooltiptext {
         visibility: visible;
     }
+    
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+}
+
+    .card button:hover {
+        opacity: 0.7;
+}
+    .quantity {
+        display: inline-block; }
+
+    .quantity .input-text.qty {
+        width: 35px;
+        height: 39px;
+        padding: 0 5px;
+        text-align: center;
+        background-color: transparent;
+        border: 1px solid #efefef;
+}
+
+    .quantity.buttons_added {
+        text-align: left;
+        position: relative;
+        white-space: nowrap;
+        vertical-align: top; }
+
+.quantity.buttons_added input {
+        display: inline-block;
+        margin: 0;
+        vertical-align: top;
+        box-shadow: none;
+}
+
+    .quantity.buttons_added .minus,
+    .quantity.buttons_added .plus {
+        padding: 7px 10px 8px;
+        height: 41px;
+        background-color: #ffffff;
+        border: 1px solid #efefef;
+            cursor:pointer;}
+
+    .quantity.buttons_added .minus {
+        border-right: 0; }
+
+    .quantity.buttons_added .plus {
+        border-left: 0; }
+
+    .quantity.buttons_added .minus:hover,
+    .quantity.buttons_added .plus:hover {
+        background: #eeeeee; }
+
+    .quantity input::-webkit-outer-spin-button,
+    .quantity input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        margin: 0; }
+ 
+    .quantity.buttons_added .minus:focus,
+    .quantity.buttons_added .plus:focus {
+        outline: none; }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -153,6 +221,12 @@
                 <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2020/02/glass-of-milk.jpg?quality=82&strip=1&resize=640%2C360" width="50"
                     height="50">
                     <br>
+                    <body>
+                        <div class="quantity buttons_added">
+                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                    </div>
+                      </body>
+                <p><button>Add to Cart</button></p>
             </div>
         </div>
 
@@ -165,6 +239,12 @@
                 <img src="https://myquietkitchen.com/wp-content/uploads/2021/04/Vegan-Feta-Cheese-Oil-Free-500x375.jpg"
                     width="50" height="50">
                     <br>
+                    <body>
+                        <div class="quantity buttons_added">
+                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                    </div>
+                      </body>
+                <p><button>Add to Cart</button></p>
             </div>
         </div>
 
@@ -177,6 +257,12 @@
                 <img src="http://www.mayrand.ca/globalassets/mayrand/catalog-mayrand/produits-laitiers/09114_mozzarella-rapee-20-racolli.jpg"
                     width="50" height="50">
                     <br>
+                    <body>
+                        <div class="quantity buttons_added">
+                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                    </div>
+                      </body>
+                <p><button>Add to Cart</button></p>
             </div>
         </div>
 
@@ -189,6 +275,12 @@
                 <img src="https://simplyhomecooked.com/wp-content/uploads/2021/08/yogurt-parfait-4.jpg"
                     width="50" height="50">
                     <br>
+                    <body>
+                        <div class="quantity buttons_added">
+                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                    </div>
+                      </body>
+                    <p><button>Add to Cart</button></p>
             </div>
         </div>
     </div>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color: #3a3a3a;
+}
+
+#main-holder {
+  width: 50%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 2px black;
+  padding: 10px;
+}
+
+#login-form {
+  align-self: flex-start;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 16px;
+}
+
+#login-form-submit {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #3a3a3a;
+  cursor: pointer;
+  outline: none;
+}
+
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up</title>
+  <link rel="stylesheet" href="login-page.css">
+  <script defer src="login-page.js"></script>
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 id="login-header">Sign up</h1>
+    <img src="https://cengage.force.com/resource/1607465003000/loginIcon" width="250" height="250">
+    <div class="container">
+        <label for="first"><b>*Full name</b></label>
+        <input type="text" placeholder="Enter Username" name="first" required>
+        <br>
+        <label for="mail"><b>*E-mail address</b></label>
+        <input type="password" placeholder="Enter E-mail" name="mail" required>
+        <br>
+        <label for="postal"><b>*Postal code</b></label>
+        <input type="text" placeholder="Enter Username" name="postal" required>
+        <br>
+        <label for="uname"><b>*Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+        <br>
+        <label for="psw"><b>*Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>  
+        <button type="submit">Create Account</button>
+      </div>
+  </main>
+  </div>
+</body>
+
+</html>
