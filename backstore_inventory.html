@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .header {
+        padding: 60px;
+        font-size: 30px;
+        font-family: "Times New Roman", Times, serif;
+        color: #2C3539;
+        text-align: center;
+        background-image: url("https://thumbs.dreamstime.com/z/supermarket-interior-flat-vector-illustration-grocery-store-shelves-food-products-cartoon-food-shop-aisle-bakery-meat-166466892.jpg")
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+    }
+
+    .headerAisle {
+        padding: 60px;
+        font-size: 30px;
+        font-family: "Times New Roman", Times, serif;
+        color: #2C3539;
+        text-align: center;
+        background-image: url("https://thumbs.dreamstime.com/z/supermarket-interior-flat-vector-illustration-grocery-store-shelves-food-products-cartoon-food-shop-aisle-bakery-meat-166466892.jpg")
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Float four columns side by side */
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    /* Remove extra left and right margins, due to padding */
+    .row {
+        margin: 0 -5px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Style the counter cards */
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #FFE5B4;
+        color: black;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="headerAisle">
+    <h1>Inventory</h1>
+    <br>
+</div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+    <button onclick = "location.href = 'homepage.html'" style="background-color: transparent; position: absolute; top: 20px; right: 20px; font-size:35px"><i class="fa fa-home"></i></button>
+    
+    <h2>Snacks Inventory</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3>Gummy bears <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">A sugary treat in the shape of a bear</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://i.pinimg.com/736x/8f/b8/21/8fb8210b527db4b476908015deba55bb.jpg" width="50"
+                    height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Chocolate bar <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">A milky delight that will put a smile on everyones face</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://static7.depositphotos.com/1007989/759/i/950/depositphotos_7599549-stock-photo-baking-icon.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Bear paws <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">An amazing snack for kids during lunch</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://thumbs.dreamstime.com/b/dairy-products-milk-food-cartoon-vector-illustration-isolated-white-background-94255658.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Rice cracker <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">A suprisingly low carb snack that is an ideal replacements for chips</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://image.shutterstock.com/image-vector/vector-illustration-meat-260nw-133260383.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Granola bar <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">A quick source of energy for the move</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://thumbs.dreamstime.com/b/frozen-food-icon-supermarket-shopping-mall-related-vector-illustration-216864437.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <h3>Cookies <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">A buttery soft delight </span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://www.nicepng.com/png/detail/211-2118840_food-plants-cartoon-vegetables-eggplant-healthy-eggplant-clip.png"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Chips <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">Although unhealthy, it is a great snack to share amongst your friends</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://image.shutterstock.com/image-vector/toasting-beer-glasses-vector-illustration-260nw-705945535.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <h3>Nuts <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">A great source of fat and protein for athletes</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://thumbs.dreamstime.com/z/cartoon-house-vector-illustration-white-background-56861518.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Baking Inventory</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3>Cupcake <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">A perfect pastry for a sweet tooth</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="http://cdn.sallysbakingaddiction.com/wp-content/uploads/2019/05/yellow-cupcakes-with-chocolate-frosting-sprinkles.jpg" width="50"
+                    height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Chocolate Cake <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">Chocolate cake, soft and gooey</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://thestayathomechef.com/wp-content/uploads/2016/06/The-Most-Amazing-Chocolate-Cake-Square-1.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Yeast <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">Yeast to make your bread rise!</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://www.thespruceeats.com/thmb/64vTHKy0mTQPwVq_FoUmJAaS8Cw=/400x300/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-126372759-5ad8ae58a9d4f9003d94e9a0.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Brownie mix <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">Fun and delicious brownies for the whole family</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://i5.walmartimages.ca/images/Enlarge/044/708/999999-65633044708.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+    </div>
+    <h2>Dairy Inventory</h2>
+        <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3>Milk <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">2% milk to make your bones strong</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2020/02/glass-of-milk.jpg?quality=82&strip=1&resize=640%2C360" width="50"
+                    height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Feta Cheese <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">Crumbly cheese, perfect for a salad</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://myquietkitchen.com/wp-content/uploads/2021/04/Vegan-Feta-Cheese-Oil-Free-500x375.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Mozarella <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">Grated cheese for all kinds of toppings</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="http://www.mayrand.ca/globalassets/mayrand/catalog-mayrand/produits-laitiers/09114_mozzarella-rapee-20-racolli.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Yogurt <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">Healthy and delicious fruity yogurt</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://simplyhomecooked.com/wp-content/uploads/2021/08/yogurt-parfait-4.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+    </div>
+    <h2>Meats Inventory</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3>Ribeye <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">Tender steaks for the whole family</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml" width="50"
+                    height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Pork Chop <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">Tender piece of pork, great for grilling</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://www.foodnetwork.com/content/dam/images/food/video/2019/6/3/0/0181847-pork-chops-s4x3.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Chicken Breast <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">Easy to cook, delicious for the whole family</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://www.foodiecrush.com/wp-content/uploads/2018/08/Instant-Pot-Chicken-Breasts-foodiecrush.com-006A.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Turkey <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
+                    <span class="tooltiptext">Great turkey prices and sizes for the holidays</span>
+                </div></h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://i5.walmartimages.ca/images/Large/329/793/6000203329793.jpg"
+                    width="50" height="50">
+                    <br>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <button onclick="location.href = 'homepage.html'"
+        style="background-color: transparent; position: absolute; top: 20px; right: 20px; font-size:35px"><i
+            class="fa fa-home"></i></button>
+
+    <html lang="en">
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="login.html">Login</a>
+        <a href="shoppingcart.html">Shopping Cart</a>
+        <a href="aisles.html">Aisles</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="backstore_user_list.html">Back Store</a>
+        
+    </div>
+    <span style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
+        onclick="openNav()">&#9776; MENU</span>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
+
+</html>
