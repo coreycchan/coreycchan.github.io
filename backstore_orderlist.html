@@ -52,6 +52,7 @@
             font-size: 18px;
         }
     }
+
     .headerAisle {
         padding: 60px;
         font-size: 30px;
@@ -128,7 +129,7 @@
     .tooltip:hover .tooltiptext {
         visibility: visible;
     }
-    
+
     .card button {
         border: none;
         outline: 0;
@@ -139,13 +140,15 @@
         cursor: pointer;
         width: 100%;
         font-size: 18px;
-}
+    }
 
     .card button:hover {
         opacity: 0.7;
-}
+    }
+
     .quantity {
-        display: inline-block; }
+        display: inline-block;
+    }
 
     .quantity .input-text.qty {
         width: 35px;
@@ -154,20 +157,21 @@
         text-align: center;
         background-color: transparent;
         border: 1px solid #efefef;
-}
+    }
 
     .quantity.buttons_added {
         text-align: left;
         position: relative;
         white-space: nowrap;
-        vertical-align: top; }
+        vertical-align: top;
+    }
 
-.quantity.buttons_added input {
+    .quantity.buttons_added input {
         display: inline-block;
         margin: 0;
         vertical-align: top;
         box-shadow: none;
-}
+    }
 
     .quantity.buttons_added .minus,
     .quantity.buttons_added .plus {
@@ -175,112 +179,98 @@
         height: 41px;
         background-color: #ffffff;
         border: 1px solid #efefef;
-            cursor:pointer;}
+        cursor: pointer;
+    }
 
     .quantity.buttons_added .minus {
-        border-right: 0; }
+        border-right: 0;
+    }
 
     .quantity.buttons_added .plus {
-        border-left: 0; }
+        border-left: 0;
+    }
 
     .quantity.buttons_added .minus:hover,
     .quantity.buttons_added .plus:hover {
-        background: #eeeeee; }
+        background: #eeeeee;
+    }
 
     .quantity input::-webkit-outer-spin-button,
     .quantity input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         -moz-appearance: none;
-        margin: 0; }
- 
+        margin: 0;
+    }
+
     .quantity.buttons_added .minus:focus,
     .quantity.buttons_added .plus:focus {
-        outline: none; }
+        outline: none;
+    }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <div class="headerAisle">
-    <h1>Aisles</h1>
-    <h2>Find your items quickly</h2>
+    <h1>Order List</h1>
     <br>
 
 </div>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E">
+
 <body>
-    <h2>Choose a Dairy product:</h2>
+    <h2>Order List: <div class="w3-dropdown-hover">
+        <button class="w3-button w3-black w3-small">Select</button>
+        <div class="w3-dropdown-content w3-bar-block w3-border">
+            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
+            <a href="backstore_order_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
+            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
+        </div>
+    </div></h2>
 
     <div class="row">
         <div class="column">
             <div class="card">
-                <h3>Milk <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                    <span class="tooltiptext">2% milk to make your bones strong</span>
-                </div></h3>
-                <h5>Price: 5.00$</h5>
-                <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2020/02/glass-of-milk.jpg?quality=82&strip=1&resize=640%2C360" width="50"
-                    height="50">
-                    <br>
-                    <body>
-                        <div class="quantity buttons_added">
-                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
-                    </div>
-                      </body>
-                <p><button>Add to Cart</button></p>
+                <h3>Order #0001</h3>
+                <h5>First Name: Corey Last Name: Chan</h5>
+                <h5>Address: 18114 Elkas Boulevard</h5>
+                <h5>User ID: 40065361</h5>
+                <h5>Date: 10/12/2021</h5>
             </div>
         </div>
 
         <div class="column">
             <div class="card">
-                <h3>Feta Cheese <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                    <span class="tooltiptext">Crumbly cheese, perfect for a salad</span>
-                </div></h3>
-                <h5>Price: 5.00$</h5>
-                <img src="https://myquietkitchen.com/wp-content/uploads/2021/04/Vegan-Feta-Cheese-Oil-Free-500x375.jpg"
-                    width="50" height="50">
-                    <br>
-                    <body>
-                        <div class="quantity buttons_added">
-                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
-                    </div>
-                      </body>
-                <p><button>Add to Cart</button></p>
+                <h3>Order #0002</h3>
+                <h5>First Name: Felix Last Name: Wong</h5>
+                <h5>Address: 2854 Rue Gaetan-Labreche</h5>
+                <h5>User ID: 40092894</h5>
+                <h5>Date: 10/12/2021</h5>
             </div>
         </div>
 
         <div class="column">
             <div class="card">
-                <h3>Mozarella <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                    <span class="tooltiptext">Grated cheese for all kinds of toppings</span>
-                </div></h3>
-                <h5>Price: 5.00$</h5>
-                <img src="http://www.mayrand.ca/globalassets/mayrand/catalog-mayrand/produits-laitiers/09114_mozzarella-rapee-20-racolli.jpg"
-                    width="50" height="50">
-                    <br>
-                    <body>
-                        <div class="quantity buttons_added">
-                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
-                    </div>
-                      </body>
-                <p><button>Add to Cart</button></p>
+                <h3>Order #0003</h3>
+                <h5>First Name: Corey Last Name: Chan</h5>
+                <h5>Address: 18114 Elkas Boulevard</h5>
+                <h5>User ID: 40065361</h5>
+                <h5>Date: 10/12/2021</h5>
             </div>
         </div>
 
         <div class="column">
             <div class="card">
-                <h3>Yogurt <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                    <span class="tooltiptext">Healthy and delicious fruity yogurt</span>
-                </div></h3>
-                <h5>Price: 5.00$</h5>
-                <img src="https://simplyhomecooked.com/wp-content/uploads/2021/08/yogurt-parfait-4.jpg"
-                    width="50" height="50">
-                    <br>
-                    <body>
-                        <div class="quantity buttons_added">
-                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
-                    </div>
-                      </body>
-                    <p><button>Add to Cart</button></p>
+                <h3>Order #0004</h3>
+                <h5>First Name: Felix Last Name: Wong</h5>
+                <h5>Address: 2854 Rue Gaetan-Labreche</h5>
+                <h5>User ID: 40092894</h5>
+                <h5>Date: 10/12/2021</h5>
             </div>
         </div>
     </div>
@@ -289,7 +279,7 @@
             class="fa fa-home"></i></button>
 
     <html lang="en">
-    
+
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="login.html">Login</a>
@@ -299,7 +289,6 @@
         <a href="backstore_user_list.html">Back Store</a>
         <a href="backstore_inventory.html">Inventory</a>
         <a href="backstore_orderlist.html">Order List</a>
-        
     </div>
     <span style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
         onclick="openNav()">&#9776; MENU</span>
