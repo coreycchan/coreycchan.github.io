@@ -8,3 +8,7 @@ Templates will be written in html/css
 
 Useful resources: 
 https://www.w3schools.com/howto/howto_js_sidenav.asp
+
+Website Name: https://coreycchan.github.io/
+
+
