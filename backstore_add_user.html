@@ -65,19 +65,21 @@
 
     <html lang="en">
     <div class="header">
-        <h1>Back Store</h1>
-        <h2>Inventory</h2>
+        <h1>Welcome to our Online Superstore</h1>
+        <h2>Adding a User</h2>
         <br>
     </div>
-    
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Login</a>
+        <a href="login.html">Login</a>
         <a href="shoppingcart.html">Shopping Cart</a>
         <a href="aisles.html">Aisles</a>
         <a href="signup.html">Sign Up</a>
+        <a href="backstore_user_list.html">Back Store</a>
         
     </div>
+
+
     <span style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
         onclick="openNav()">&#9776; MENU</span>
 
@@ -90,6 +92,18 @@
             document.getElementById("mySidenav").style.width = "0";
         }
     </script>
+
+    <form href = "backstore_user_list.html">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value=""><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" value=""><br>
+        <label for="postal">Postal Code:</label><br>
+        <input type="text" id="postal" name="postal" value=""><br><br>
+        <button type="submit" onclick ="location.href = 'backstore_user_list.html'">Save</button>
+    </form> 
 </body>
 
 </html>
