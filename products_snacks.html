@@ -129,6 +129,70 @@
     .tooltip:hover .tooltiptext {
         visibility: visible;
     }
+    .card button:hover {
+        opacity: 0.7;
+    }
+
+    .quantity {
+        display: inline-block;
+    }
+
+    .quantity .input-text.qty {
+        width: 35px;
+        height: 39px;
+        padding: 0 5px;
+        text-align: center;
+        background-color: transparent;
+        border: 1px solid #efefef;
+    }
+
+    .quantity.buttons_added {
+        text-align: left;
+        position: relative;
+        white-space: nowrap;
+        vertical-align: top;
+    }
+
+    .quantity.buttons_added input {
+        display: inline-block;
+        margin: 0;
+        vertical-align: top;
+        box-shadow: none;
+    }
+
+    .quantity.buttons_added .minus,
+    .quantity.buttons_added .plus {
+        padding: 7px 10px 8px;
+        height: 41px;
+        background-color: #ffffff;
+        border: 1px solid #efefef;
+        cursor: pointer;
+    }
+
+    .quantity.buttons_added .minus {
+        border-right: 0;
+    }
+
+    .quantity.buttons_added .plus {
+        border-left: 0;
+    }
+
+    .quantity.buttons_added .minus:hover,
+    .quantity.buttons_added .plus:hover {
+        background: #eeeeee;
+    }
+
+    .quantity input::-webkit-outer-spin-button,
+    .quantity input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        margin: 0;
+    }
+
+    .quantity.buttons_added .minus:focus,
+    .quantity.buttons_added .plus:focus {
+        outline: none;
+    }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -154,6 +218,14 @@
                 <img src="https://i.pinimg.com/736x/8f/b8/21/8fb8210b527db4b476908015deba55bb.jpg" width="50"
                     height="50">
                     <br>
+                    <body>
+                        <div class="quantity buttons_added">
+                            <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                                name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                                inputmode=""><input type="button" value="+" class="plus">
+                        </div>
+                    </body>
+                    <p><button>Add to Cart</button></p>
             </div>
         </div>
 
@@ -166,6 +238,14 @@
                 <img src="https://static7.depositphotos.com/1007989/759/i/950/depositphotos_7599549-stock-photo-baking-icon.jpg"
                     width="50" height="50">
                     <br>
+                    <body>
+                        <div class="quantity buttons_added">
+                            <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                                name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                                inputmode=""><input type="button" value="+" class="plus">
+                        </div>
+                    </body>
+                    <p><button>Add to Cart</button></p>
             </div>
         </div>
 
@@ -178,6 +258,14 @@
                 <img src="https://thumbs.dreamstime.com/b/dairy-products-milk-food-cartoon-vector-illustration-isolated-white-background-94255658.jpg"
                     width="50" height="50">
                     <br>
+                    <body>
+                        <div class="quantity buttons_added">
+                            <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                                name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                                inputmode=""><input type="button" value="+" class="plus">
+                        </div>
+                    </body>
+                    <p><button>Add to Cart</button></p>
             </div>
         </div>
 
@@ -190,6 +278,14 @@
                 <img src="https://image.shutterstock.com/image-vector/vector-illustration-meat-260nw-133260383.jpg"
                     width="50" height="50">
                     <br>
+                    <body>
+                        <div class="quantity buttons_added">
+                            <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                                name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                                inputmode=""><input type="button" value="+" class="plus">
+                        </div>
+                    </body>
+                    <p><button>Add to Cart</button></p>
             </div>
         </div>
 
@@ -202,6 +298,14 @@
                 <img src="https://thumbs.dreamstime.com/b/frozen-food-icon-supermarket-shopping-mall-related-vector-illustration-216864437.jpg"
                     width="50" height="50">
                     <br>
+                    <body>
+                        <div class="quantity buttons_added">
+                            <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                                name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                                inputmode=""><input type="button" value="+" class="plus">
+                        </div>
+                    </body>
+                    <p><button>Add to Cart</button></p>
             </div>
         </div>
         <div class="column">
@@ -213,6 +317,14 @@
                 <img src="https://www.nicepng.com/png/detail/211-2118840_food-plants-cartoon-vegetables-eggplant-healthy-eggplant-clip.png"
                     width="50" height="50">
                     <br>
+                    <body>
+                        <div class="quantity buttons_added">
+                            <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                                name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                                inputmode=""><input type="button" value="+" class="plus">
+                        </div>
+                    </body>
+                    <p><button>Add to Cart</button></p>
             </div>
         </div>
 
@@ -225,6 +337,14 @@
                 <img src="https://image.shutterstock.com/image-vector/toasting-beer-glasses-vector-illustration-260nw-705945535.jpg"
                     width="50" height="50">
                     <br>
+                    <body>
+                        <div class="quantity buttons_added">
+                            <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                                name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                                inputmode=""><input type="button" value="+" class="plus">
+                        </div>
+                    </body>
+                    <p><button>Add to Cart</button></p>
             </div>
         </div>
         <div class="column">
@@ -236,6 +356,14 @@
                 <img src="https://thumbs.dreamstime.com/z/cartoon-house-vector-illustration-white-background-56861518.jpg"
                     width="50" height="50">
                     <br>
+                    <body>
+                        <div class="quantity buttons_added">
+                            <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                                name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                                inputmode=""><input type="button" value="+" class="plus">
+                        </div>
+                    </body>
+                    <p><button>Add to Cart</button></p>
             </div>
         </div>
     </div>
