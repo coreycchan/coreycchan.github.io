@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <style>
-.header {
+    .header {
         padding: 60px;
         font-size: 30px;
         font-family: "Times New Roman", Times, serif;
@@ -52,6 +52,7 @@
             font-size: 18px;
         }
     }
+
     .headerAisle {
         padding: 60px;
         font-size: 30px;
@@ -128,6 +129,7 @@
     .tooltip:hover .tooltiptext {
         visibility: visible;
     }
+
     .card button {
         border: none;
         outline: 0;
@@ -138,13 +140,15 @@
         cursor: pointer;
         width: 100%;
         font-size: 18px;
-}
+    }
 
     .card button:hover {
         opacity: 0.7;
-}
+    }
+
     .quantity {
-        display: inline-block; }
+        display: inline-block;
+    }
 
     .quantity .input-text.qty {
         width: 35px;
@@ -153,20 +157,21 @@
         text-align: center;
         background-color: transparent;
         border: 1px solid #efefef;
-}
+    }
 
     .quantity.buttons_added {
         text-align: left;
         position: relative;
         white-space: nowrap;
-        vertical-align: top; }
+        vertical-align: top;
+    }
 
-.quantity.buttons_added input {
+    .quantity.buttons_added input {
         display: inline-block;
         margin: 0;
         vertical-align: top;
         box-shadow: none;
-}
+    }
 
     .quantity.buttons_added .minus,
     .quantity.buttons_added .plus {
@@ -174,27 +179,33 @@
         height: 41px;
         background-color: #ffffff;
         border: 1px solid #efefef;
-            cursor:pointer;}
+        cursor: pointer;
+    }
 
     .quantity.buttons_added .minus {
-        border-right: 0; }
+        border-right: 0;
+    }
 
     .quantity.buttons_added .plus {
-        border-left: 0; }
+        border-left: 0;
+    }
 
     .quantity.buttons_added .minus:hover,
     .quantity.buttons_added .plus:hover {
-        background: #eeeeee; }
+        background: #eeeeee;
+    }
 
     .quantity input::-webkit-outer-spin-button,
     .quantity input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         -moz-appearance: none;
-        margin: 0; }
- 
+        margin: 0;
+    }
+
     .quantity.buttons_added .minus:focus,
     .quantity.buttons_added .plus:focus {
-        outline: none; }
+        outline: none;
+    }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -207,6 +218,7 @@
 </div>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E">
+
 <body>
     <h2>Choose a Meat product:</h2>
 
@@ -214,17 +226,20 @@
         <div class="column">
             <div class="card">
                 <h3>Ribeye <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                    <span class="tooltiptext">Tender steaks for the whole family</span>
-                </div></h3>
-                <h5>Price: 5.00$</h5>
-                <img src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml" width="50"
-                    height="50">
-                    <br>
-                    <body>
-                        <div class="quantity buttons_added">
-                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                        <span class="tooltiptext">Tender steaks for the whole family</span>
                     </div>
-                      </body>
+                </h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml"
+                    width="50" height="50">
+                <br>
+                <body>
+                    <div class="quantity buttons_added">
+                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                            name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                            inputmode=""><input type="button" value="+" class="plus">
+                    </div>
+                </body>
                 <p><button>Add to Cart</button></p>
             </div>
         </div>
@@ -232,17 +247,21 @@
         <div class="column">
             <div class="card">
                 <h3>Pork Chop <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                    <span class="tooltiptext">Tender piece of pork, great for grilling</span>
-                </div></h3>
+                        <span class="tooltiptext">Tender piece of pork, great for grilling</span>
+                    </div>
+                </h3>
                 <h5>Price: 5.00$</h5>
                 <img src="https://www.foodnetwork.com/content/dam/images/food/video/2019/6/3/0/0181847-pork-chops-s4x3.jpg"
                     width="50" height="50">
-                    <br>
-                    <body>
-                        <div class="quantity buttons_added">
-                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                <br>
+
+                <body>
+                    <div class="quantity buttons_added">
+                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                            name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                            inputmode=""><input type="button" value="+" class="plus">
                     </div>
-                      </body>
+                </body>
                 <p><button>Add to Cart</button></p>
             </div>
         </div>
@@ -250,17 +269,21 @@
         <div class="column">
             <div class="card">
                 <h3>Chicken Breast <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                    <span class="tooltiptext">Easy to cook, delicious for the whole family</span>
-                </div></h3>
+                        <span class="tooltiptext">Easy to cook, delicious for the whole family</span>
+                    </div>
+                </h3>
                 <h5>Price: 5.00$</h5>
                 <img src="https://www.foodiecrush.com/wp-content/uploads/2018/08/Instant-Pot-Chicken-Breasts-foodiecrush.com-006A.jpg"
                     width="50" height="50">
-                    <br>
-                    <body>
-                        <div class="quantity buttons_added">
-                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                <br>
+
+                <body>
+                    <div class="quantity buttons_added">
+                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                            name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                            inputmode=""><input type="button" value="+" class="plus">
                     </div>
-                      </body>
+                </body>
                 <p><button>Add to Cart</button></p>
             </div>
         </div>
@@ -268,17 +291,20 @@
         <div class="column">
             <div class="card">
                 <h3>Turkey <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-                    <span class="tooltiptext">Great turkey prices and sizes for the holidays</span>
-                </div></h3>
-                <h5>Price: 5.00$</h5>
-                <img src="https://i5.walmartimages.ca/images/Large/329/793/6000203329793.jpg"
-                    width="50" height="50">
-                    <br>
-                    <body>
-                        <div class="quantity buttons_added">
-                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                        <span class="tooltiptext">Great turkey prices and sizes for the holidays</span>
                     </div>
-                      </body>
+                </h3>
+                <h5>Price: 5.00$</h5>
+                <img src="https://i5.walmartimages.ca/images/Large/329/793/6000203329793.jpg" width="50" height="50">
+                <br>
+
+                <body>
+                    <div class="quantity buttons_added">
+                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                            name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                            inputmode=""><input type="button" value="+" class="plus">
+                    </div>
+                </body>
                 <p><button>Add to Cart</button></p>
             </div>
         </div>
@@ -288,7 +314,7 @@
             class="fa fa-home"></i></button>
 
     <html lang="en">
-    
+
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="login.html">Login</a>
@@ -296,7 +322,7 @@
         <a href="aisles.html">Aisles</a>
         <a href="signup.html">Sign Up</a>
         <a href="backstore_user_list.html">Back Store</a>
-        
+
     </div>
     <span style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
         onclick="openNav()">&#9776; MENU</span>
