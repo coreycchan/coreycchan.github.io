@@ -271,10 +271,10 @@
                         <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
                     </div>
                 </div>
-                <h3>Order #<span id = "data"></span></h3>
-                <h5>First Name: <span id = "data1"></span> Last Name: <span id = "data2"></span></h5>
-                <h5>Address: <span id = "data3"</span></h5>
-                <h5>Date: <span id = "data4"></span></h5>
+                <h3>Order #<span id = "order"></span></h3>
+                <h5>First Name: <span id = "fname"></span> Last Name: <span id = "lname"></span></h5>
+                <h5>Address: <span id = "address"</span></h5>
+                <h5>Date: <span id = "date"></span></h5>
             </div>
         </div>
     </div>
@@ -299,11 +299,11 @@
         onclick="openNav()">&#9776; MENU</span>
 
     <script>
-            document.getElementById("data").innerHTML = window.localStorage.getItem("txtValue");
-            document.getElementById("data1").innerHTML = window.localStorage.getItem("txtValue1");
-            document.getElementById("data2").innerHTML = window.localStorage.getItem("txtValue2");
-            document.getElementById("data3").innerHTML = window.localStorage.getItem("txtValue3");
-            document.getElementById("data4").innerHTML = window.localStorage.getItem("txtValue4");
+            document.getElementById("order").innerHTML = window.localStorage.getItem("txtOrder");
+            document.getElementById("fname").innerHTML = window.localStorage.getItem("txtFName");
+            document.getElementById("lname").innerHTML = window.localStorage.getItem("txtLName");
+            document.getElementById("address").innerHTML = window.localStorage.getItem("txtAddress");
+            document.getElementById("date").innerHTML = window.localStorage.getItem("txtDate");
     </script>
 
     <script>
