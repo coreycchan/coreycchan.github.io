@@ -204,6 +204,22 @@
                 <h5>Postal Code: </h5>
             </div>
         </div>
+
+         <div class="column">
+            <div class="card">
+                <div class="dropdown">
+                    <button> Configure <span class="glyphicon glyphicon-plus-sign"></span></button>
+                    <div class="dropdown-content">
+                        <a href="backstore_add_user.html">Add</a>
+                        <a href="#">Edit</a>
+                        <a href="#">Delete</a>
+                    </div>
+                </div>
+                <h3>First Name: <span id = "data"></span> Last Name: <span id  </h3>
+                <h5>Address: 2854 Rue Gaetan-Labreche</h5>
+                <h5>Postal Code: </h5>
+            </div>
+        </div>
     </div>
 
 
@@ -262,5 +278,32 @@
             }
         }
     </script>
+
+
+
+        <div class="column">
+            <div class="card">
+                <div class="dropdown">
+                    <button> Configure <span class="glyphicon glyphicon-plus-sign"></span></button>
+                    <div class="dropdown-content">
+                        <a href="backstore_add_user.html">Add</a>
+                        <a href="#">Edit</a>
+                        <a href="#">Delete</a>
+                    </div>
+                </div>
+                <h3>First Name: Corey Last Name: Chan </h3>
+                <h5>Address: 18114 Elkas Boulevard</h5>
+                <h5>Postal Code: </h5>
+            </div>
+        </div>
+
+    <script>
+            document.getElementById("data").innerHTML = window.localStorage.getItem("txtValue");
+            document.getElementById("data1").innerHTML = window.localStorage.getItem("txtValue1");
+            document.getElementById("data2").innerHTML = window.localStorage.getItem("txtValue2");
+            document.getElementById("data3").innerHTML = window.localStorage.getItem("txtValue3");
+    </script>
+
+    
 </body>
 </html>>

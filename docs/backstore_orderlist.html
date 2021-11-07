@@ -224,56 +224,61 @@
 </div>
 
 <body>
-    <h2>Order List: <div class="w3-dropdown-hover">
-        <button class="w3-button w3-black w3-small">Select</button>
-        <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_order_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-        </div>
-    </div></h2>
+    <h2>Order List: </h2>
 
     <div class="row">
         <div class="column">
             <div class="card">
+                <div class="w3-dropdown-hover">
+                    <button class="w3-button w3-black w3-small">Select</button>
+                    <div class="w3-dropdown-content w3-bar-block w3-border">
+                        <a href="backstore_order_add.html" class="w3-bar-item w3-button w3-small">Add</a>
+                        <a href="backstore_order_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
+                        <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
+                    </div>
+                </div>
                 <h3>Order #0001</h3>
                 <h5>First Name: Corey Last Name: Chan</h5>
                 <h5>Address: 18114 Elkas Boulevard</h5>
-                <h5>User ID: 40065361</h5>
                 <h5>Date: 10/12/2021</h5>
             </div>
         </div>
 
         <div class="column">
             <div class="card">
+                <div class="w3-dropdown-hover">
+                    <button class="w3-button w3-black w3-small">Select</button>
+                    <div class="w3-dropdown-content w3-bar-block w3-border">
+                        <a href="backstore_order_add.html" class="w3-bar-item w3-button w3-small">Add</a>
+                        <a href="backstore_order_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
+                        <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
+                    </div>
+                </div>
                 <h3>Order #0002</h3>
                 <h5>First Name: Felix Last Name: Wong</h5>
                 <h5>Address: 2854 Rue Gaetan-Labreche</h5>
-                <h5>User ID: 40092894</h5>
                 <h5>Date: 10/12/2021</h5>
             </div>
         </div>
 
         <div class="column">
             <div class="card">
-                <h3>Order #0003</h3>
-                <h5>First Name: Corey Last Name: Chan</h5>
-                <h5>Address: 18114 Elkas Boulevard</h5>
-                <h5>User ID: 40065361</h5>
-                <h5>Date: 10/12/2021</h5>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <h3>Order #0004</h3>
-                <h5>First Name: Felix Last Name: Wong</h5>
-                <h5>Address: 2854 Rue Gaetan-Labreche</h5>
-                <h5>User ID: 40092894</h5>
-                <h5>Date: 10/12/2021</h5>
+                <div class="w3-dropdown-hover">
+                    <button class="w3-button w3-black w3-small">Select</button>
+                    <div class="w3-dropdown-content w3-bar-block w3-border">
+                        <a href="backstore_order_add.html" class="w3-bar-item w3-button w3-small">Add</a>
+                        <a href="backstore_order_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
+                        <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
+                    </div>
+                </div>
+                <h3>Order #<span id = "data"></span></h3>
+                <h5>First Name: <span id = "data1"></span> Last Name: <span id = "data2"></span></h5>
+                <h5>Address: <span id = "data3"</span></h5>
+                <h5>Date: <span id = "data4"></span></h5>
             </div>
         </div>
     </div>
+
     <button onclick="location.href = 'index.html'"
         style="background-color: transparent; position: absolute; top: 20px; right: 20px; font-size:35px"><i
             class="fa fa-home"></i></button>
@@ -292,6 +297,14 @@
     </div>
     <span style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
         onclick="openNav()">&#9776; MENU</span>
+
+    <script>
+            document.getElementById("data").innerHTML = window.localStorage.getItem("txtValue");
+            document.getElementById("data1").innerHTML = window.localStorage.getItem("txtValue1");
+            document.getElementById("data2").innerHTML = window.localStorage.getItem("txtValue2");
+            document.getElementById("data3").innerHTML = window.localStorage.getItem("txtValue3");
+            document.getElementById("data4").innerHTML = window.localStorage.getItem("txtValue4");
+    </script>
 
     <script>
         function openNav() {
