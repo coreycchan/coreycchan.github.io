@@ -274,6 +274,23 @@
                 <h3>Order #<span id = "order"></span></h3>
                 <h5>First Name: <span id = "fname"></span> Last Name: <span id = "lname"></span></h5>
                 <h5>Address: <span id = "address"</span></h5>
+                <h5>Date: <span id = "date"></span></h5> 
+            </div>
+        </div>
+
+        <div class="column" id = "demo">
+            <div class="card">
+                <div class="w3-dropdown-hover">
+                    <button class="w3-button w3-black w3-small">Select</button>
+                    <div class="w3-dropdown-content w3-bar-block w3-border">
+                        <a href="backstore_order_add.html" class="w3-bar-item w3-button w3-small">Add</a>
+                        <a href="backstore_order_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
+                        <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
+                    </div>
+                </div>
+                <h3>Order #<span id = "order"></span></h3>
+                <h5>First Name: <span id = "fname"></span> Last Name: <span id = "lname"></span></h5>
+                <h5>Address: <span id = "address"</span></h5>
                 <h5>Date: <span id = "date"></span></h5>
             </div>
         </div>
@@ -299,12 +316,20 @@
         onclick="openNav()">&#9776; MENU</span>
 
     <script>
-            document.getElementById("order").innerHTML = window.localStorage.getItem("txtOrder");
-            document.getElementById("fname").innerHTML = window.localStorage.getItem("txtFName");
-            document.getElementById("lname").innerHTML = window.localStorage.getItem("txtLName");
-            document.getElementById("address").innerHTML = window.localStorage.getItem("txtAddress");
-            document.getElementById("date").innerHTML = window.localStorage.getItem("txtDate");
+        document.getElementById("order").innerHTML = window.localStorage.getItem("txtOrder");
+        document.getElementById("fname").innerHTML = window.localStorage.getItem("txtFName");
+        document.getElementById("lname").innerHTML = window.localStorage.getItem("txtLName");
+        document.getElementById("address").innerHTML = window.localStorage.getItem("txtAddress");
+        document.getElementById("date").innerHTML = window.localStorage.getItem("txtDate");
     </script>
+    <script>
+        var order = ["0001", "0002"];
+        var fNames = ["Corey", "Felix"];
+        var lNames = ["Chan", "Wong"];
+        var address = ["18114 Elkas Boul", "123123 Gaetan-Labreche"]
+
+        
+
 
     <script>
         function openNav() {
