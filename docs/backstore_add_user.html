@@ -1,132 +1,75 @@
 <!DOCTYPE html>
-<style>
-    .header {
-        padding: 60px;
-        font-size: 30px;
-        font-family: "Times New Roman", Times, serif;
-        color: #2C3539;
-        text-align: center;
-        background-image: url("https://thumbs.dreamstime.com/z/supermarket-interior-flat-vector-illustration-grocery-store-shelves-food-products-cartoon-food-shop-aisle-bakery-meat-166466892.jpg")
-    }
-
-    .sidenav {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-    }
-
-    .sidenav a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-    }
-
-    .sidenav a:hover {
-        color: #f1f1f1;
-    }
-
-    .sidenav .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-    }
-
-    @media screen and (max-height: 450px) {
-        .sidenav {
-            padding-top: 15px;
-        }
-
-        .sidenav a {
-            font-size: 18px;
-        }
-    }
-
-</style>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script>
-        function getData(){  
-        //gettting the values
-        var fname = document.getElementById("fname").value;
-        var lname = document.getElementById("lname").value; 
-        var address = document.getElementById("address").value; 
-        var postal = document.getElementById("postal").value; 
-        //saving the values in local storage
-        localStorage.setItem("txtValue", fname);
-        localStorage.setItem("txtValue1", lname);
-        localStorage.setItem("txtValue2", address);
-        localStorage.setItem("txtValue3", postal);   
-        }
-    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script>
+  function getData(){
+    //gettting the values
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var address = document.getElementById("address").value;
+    var postal = document.getElementById("postal").value;
+    //saving the values in local storage
+    localStorage.setItem("txtValue", fname);
+    localStorage.setItem("txtValue1", lname);
+    localStorage.setItem("txtValue2", address);
+    localStorage.setItem("txtValue3", postal);
+  }
+  </script>
 </head>
 
 <body>
 
-    <button onclick="location.href = 'index.html'"
-        style="background-color: transparent; position: absolute; top: 20px; right: 20px; font-size:35px"><i
-            class="fa fa-home"></i></button>
+  <button onclick="location.href = 'index.html'" style="background-color: transparent; position: absolute; top: 20px; right: 20px; font-size:35px">
+    <i class="fa fa-home"></i>
+  </button>
 
-    <html lang="en">
-    <div class="header">
-        <h1>Welcome to our Online Superstore</h1>
-        <h2>Adding a User</h2>
-        <br>
-    </div>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="login.html">Login</a>
-        <a href="shoppingcart.html">Shopping Cart</a>
-        <a href="aisles.html">Aisles</a>
-        <a href="signup.html">Sign Up</a>
-        <a href="backstore_user_list.html">Back Store</a>
-        <a href="backstore_inventory.html">Inventory</a>
-        <a href="backstore_orderlist.html">Order List</a>
+  <div class="header">
+    <h1>Welcome to our Online Superstore</h1>
+    <h2>Adding a User</h2>
+    <br>
+  </div>
 
-        
-    </div>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="login.html">Login</a>
+    <a href="shoppingcart.html">Shopping Cart</a>
+    <a href="aisles.html">Aisles</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="backstore_user_list.html">Back Store</a>
+    <a href="backstore_inventory.html">Inventory</a>
+    <a href="backstore_orderlist.html">Order List</a>
+  </div>
+  <span id="nav-burger" style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
+  onclick="openNav()">&#9776; MENU</span>
 
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
 
-    <span style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
-        onclick="openNav()">&#9776; MENU</span>
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
 
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
+  <form action = "backstore_user_list.html">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="" /><br>
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-    </script>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="" /><br>
 
-    <form action = "backstore_user_list.html">
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname" value="" /><br>
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address" value="" /><br>
 
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" value="" /><br>
+    <label for="postal">Postal Code:</label><br>
+    <input type="text" id="postal" name="postal" value="" /><br><br>
 
-        <label for="address">Address:</label><br>
-        <input type="text" id="address" name="address" value="" /><br>
-
-        <label for="postal">Postal Code:</label><br>
-        <input type="text" id="postal" name="postal" value="" /><br><br>
-
-        <input type="submit" value = "Submit" onclick = "getData()">
-    </form> 
+    <input type="submit" value = "Submit" onclick = "getData()">
+  </form>
 
 </body>
 
