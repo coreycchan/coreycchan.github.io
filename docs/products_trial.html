@@ -15,6 +15,11 @@
     height: 200px;
     align-self: center;
     }
+
+    .alight-right {
+        text-align: right;
+        border: 0;
+    }
 </style>
 
 <html lang="en">
@@ -29,9 +34,22 @@
 </head>
 <body>
     <nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
-        <div class="row">
-            <div class="col">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Shopping Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div>
+        <div class = "align-right">
+            <button style = "float: right;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Shopping Cart (<span class="total-count"></span>)</button>
+            <button style = "float: right;" class="clear-cart btn btn-danger">Clear Cart</button>
+            <span id="nav-burger" style="float: left; color: black; font-size:30px;cursor:pointer"
+            onclick="openNav()">&#9776; MENU</span>
+        </div>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="login.html">Login</a>
+            <a href="shoppingcart.html">Shopping Cart</a>
+            <a href="aisles.html">Aisles</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="backstore_user_list.html">Back Store</a>
+            <a href="backstore_inventory.html">Inventory</a>
+            <a href="backstore_orderlist.html">Order List</a>
         </div>
     </nav>
 
@@ -44,6 +62,14 @@
         document.getElementById("mySidenav").style.width = "0";
     }
     </script>
+
+    <div class="header">
+        <h1>Aisles</h1>
+        <h2>Find your items quickly</h2>
+        <br>
+    </div>
+
+    <h2>Choose a Baking product:</h2>
 
     <div class="container">
         <div class="row">
