@@ -1,6 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .container img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .container .btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background-color: #555;
+      color: white;
+      font-size: 16px;
+      padding: 12px 24px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-align: center;
+    }
+    
+    .container .btn:hover {
+      background-color: black;
+    }
+    </style>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -46,13 +78,18 @@
     <div class="column">
       <div class="card">
         <h3>Gummy bears
-          <div class="tooltip">
-            <i style="font-size:24px" class="fa">&#xf059;</i>
-            <span class="tooltiptext">A sugary treat in the shape of a bear</span>
-          </div>
         </h3>
-        <h5>Price: 5.00$</h5>
-        <img src="https://i.pinimg.com/736x/8f/b8/21/8fb8210b527db4b476908015deba55bb.jpg" width="150" height="150">
+        <div class="container"></div>
+          <button class="btn"><img src="https://i.pinimg.com/736x/8f/b8/21/8fb8210b527db4b476908015deba55bb.jpg" width="150" height="150"></button>
+          <div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Here i am</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			Thank to pop me out of that button, but now i'm done so you can close this window.
+		</div>
+	</div>
+</div>
         <br>
       </div>
     </div>
@@ -60,13 +97,8 @@
     <div class="column">
       <div class="card">
         <h3>Chocolate bar
-          <div class="tooltip">
-            <i style="font-size:24px" class="fa">&#xf059;</i>
-            <span class="tooltiptext">A milky delight that will put a smile on everyones face</span>
-          </div>
         </h3>
-        <h5>Price: 5.00$</h5>
-        <img src="https://static7.depositphotos.com/1007989/759/i/950/depositphotos_7599549-stock-photo-baking-icon.jpg" width="150" height="150">
+        <button class="btn"><img src="https://static7.depositphotos.com/1007989/759/i/950/depositphotos_7599549-stock-photo-baking-icon.jpg" width="150" height="150"></button>
         <br>
       </div>
     </div>
@@ -74,13 +106,8 @@
     <div class="column">
       <div class="card">
         <h3>Bear paws
-          <div class="tooltip">
-            <i style="font-size:24px" class="fa">&#xf059;</i>
-            <span class="tooltiptext">An amazing snack for kids during lunch</span>
-          </div>
         </h3>
-        <h5>Price: 5.00$</h5>
-        <img src="https://thumbs.dreamstime.com/b/dairy-products-milk-food-cartoon-vector-illustration-isolated-white-background-94255658.jpg" width="150" height="150">
+        <button class="btn"><img src="https://thumbs.dreamstime.com/b/dairy-products-milk-food-cartoon-vector-illustration-isolated-white-background-94255658.jpg" width="150" height="150"></button>
         <br>
       </div>
     </div>
@@ -88,13 +115,8 @@
     <div class="column">
       <div class="card">
         <h3>Rice cracker
-          <div class="tooltip">
-            <i style="font-size:24px" class="fa">&#xf059;</i>
-            <span class="tooltiptext">A suprisingly low carb snack that is an ideal replacements for chips</span>
-          </div>
         </h3>
-        <h5>Price: 5.00$</h5>
-        <img src="https://image.shutterstock.com/image-vector/vector-illustration-meat-260nw-133260383.jpg" width="150" height="150">
+        <button class="btn"><img src="https://image.shutterstock.com/image-vector/vector-illustration-meat-260nw-133260383.jpg" width="150" height="150"></button>
         <br>
       </div>
     </div>
@@ -102,13 +124,8 @@
     <div class="column">
       <div class="card">
         <h3>Granola bar
-          <div class="tooltip">
-            <i style="font-size:24px" class="fa">&#xf059;</i>
-            <span class="tooltiptext">A quick source of energy for the move</span>
-          </div>
         </h3>
-        <h5>Price: 5.00$</h5>
-        <img src="https://thumbs.dreamstime.com/b/frozen-food-icon-supermarket-shopping-mall-related-vector-illustration-216864437.jpg" width="150" height="150">
+        <button class="btn"><img src="https://thumbs.dreamstime.com/b/frozen-food-icon-supermarket-shopping-mall-related-vector-illustration-216864437.jpg" width="150" height="150"></button>
         <br>
       </div>
     </div>
@@ -116,13 +133,8 @@
     <div class="column">
       <div class="card">
         <h3>Cookies
-          <div class="tooltip">
-            <i style="font-size:24px" class="fa">&#xf059;</i>
-            <span class="tooltiptext">A buttery soft delight </span>
-          </div>
         </h3>
-        <h5>Price: 5.00$</h5>
-        <img src="https://www.nicepng.com/png/detail/211-2118840_food-plants-cartoon-vegetables-eggplant-healthy-eggplant-clip.png" width="150" height="150">
+        <button class="btn"><img src="https://www.nicepng.com/png/detail/211-2118840_food-plants-cartoon-vegetables-eggplant-healthy-eggplant-clip.png" width="150" height="150"></button>
         <br>
       </div>
     </div>
@@ -130,13 +142,8 @@
     <div class="column">
       <div class="card">
         <h3>Chips
-          <div class="tooltip">
-            <i style="font-size:24px" class="fa">&#xf059;</i>
-            <span class="tooltiptext">Although unhealthy, it is a great snack to share amongst your friends</span>
-          </div>
         </h3>
-        <h5>Price: 5.00$</h5>
-        <img src="https://image.shutterstock.com/image-vector/toasting-beer-glasses-vector-illustration-260nw-705945535.jpg" width="150" height="150">
+        <button class="btn"><img src="https://image.shutterstock.com/image-vector/toasting-beer-glasses-vector-illustration-260nw-705945535.jpg" width="150" height="150"></button>
         <br>
       </div>
     </div>
@@ -144,13 +151,8 @@
     <div class="column">
       <div class="card">
         <h3>Nuts
-          <div class="tooltip">
-            <i style="font-size:24px" class="fa">&#xf059;</i>
-            <span class="tooltiptext">A great source of fat and protein for athletes</span>
-          </div>
         </h3>
-        <h5>Price: 5.00$</h5>
-        <img src="https://thumbs.dreamstime.com/z/cartoon-house-vector-illustration-white-background-56861518.jpg" width="150" height="150">
+        <button class="btn"><img src="https://thumbs.dreamstime.com/z/cartoon-house-vector-illustration-white-background-56861518.jpg" width="150" height="150"></button>
         <br>
       </div>
     </div>
