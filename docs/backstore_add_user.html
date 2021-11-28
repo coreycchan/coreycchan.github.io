@@ -54,12 +54,28 @@
     }
 
 </style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function getData(){  
+        //gettting the values
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value; 
+        var address = document.getElementById("address").value; 
+        var postal = document.getElementById("postal").value; 
+        //saving the values in local storage
+        localStorage.setItem("txtValue", fname);
+        localStorage.setItem("txtValue1", lname);
+        localStorage.setItem("txtValue2", address);
+        localStorage.setItem("txtValue3", postal);   
+        }
+    </script>
+</head>
 
 <body>
 
-    <button onclick="location.href = 'homepage.html'"
+    <button onclick="location.href = 'index.html'"
         style="background-color: transparent; position: absolute; top: 20px; right: 20px; font-size:35px"><i
             class="fa fa-home"></i></button>
 
@@ -96,17 +112,22 @@
         }
     </script>
 
-    <form href = "backstore_user_list.html">
+    <form action = "backstore_user_list.html">
         <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname" value=""><br>
+        <input type="text" id="fname" name="fname" value="" /><br>
+
         <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" value=""><br>
+        <input type="text" id="lname" name="lname" value="" /><br>
+
         <label for="address">Address:</label><br>
-        <input type="text" id="address" name="address" value=""><br>
+        <input type="text" id="address" name="address" value="" /><br>
+
         <label for="postal">Postal Code:</label><br>
-        <input type="text" id="postal" name="postal" value=""><br><br>
-        <button type="submit" onclick ="location.href = 'backstore_user_list.html'">Save</button>
+        <input type="text" id="postal" name="postal" value="" /><br><br>
+
+        <input type="submit" value = "Submit" onclick = "getData()">
     </form> 
+
 </body>
 
 </html>

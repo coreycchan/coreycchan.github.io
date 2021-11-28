@@ -59,7 +59,7 @@
 
 <body>
 
-    <button onclick="location.href = 'homepage.html'"
+    <button onclick="location.href = 'index.html'"
         style="background-color: transparent; position: absolute; top: 20px; right: 20px; font-size:35px"><i
             class="fa fa-home"></i></button>
 
@@ -79,9 +79,7 @@
         <a href="backstore_user_list.html">Back Store</a>
         <a href="backstore_inventory.html">Inventory</a>
         <a href="backstore_orderlist.html">Order List</a>
-        
     </div>
-
 
     <span style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
         onclick="openNav()">&#9776; MENU</span>
@@ -99,14 +97,19 @@
     <form href = "backstore_user_list.html">
         <label for="ordernumber">Order Number:</label><br>
         <input type="text" id="ordernumber" name="ordernumber" value="#0001"><br>
+
         <label for="fname">First Name:</label><br>
         <input type="text" id="fname" name="fname" value="Corey"><br>
+
         <label for="lname">Last Name:</label><br>
         <input type="text" id="lname" name="lname" value="Chan"><br>
+
         <label for="address">Address:</label><br>
         <input type="text" id="address" name="address" value="18114 Elkas Boulevard"><br>
+        
         <label for="date">Date of Delivery:</label><br>
         <input type="date" id="date" name="date" value="10/12/2021"><br><br>
+        
         <button type="submit" onclick ="location.href = 'backstore_user_list.html'">Save</button>
     </form> 
 </body>
