@@ -20,6 +20,76 @@
         text-align: right;
         border: 0;
     }
+    /* new button */
+    .btn {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #946B45;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.btn:hover {
+  background: #946B45;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #946B45;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
 </style>
 
 <html lang="en">
@@ -75,17 +145,17 @@
         <div class="row">
             <div class="col">
                 <div class="card" style="width: 20rem;">
-                    <img class="card-img-top" src="https://thestayathomechef.com/wp-content/uploads/2016/06/The-Most-Amazing-Chocolate-Cake-Square-1.jpg" alt="Card image cap">
+                    <a class="btn" href="#popup1"><img class="card-img-top" src="https://thestayathomechef.com/wp-content/uploads/2016/06/The-Most-Amazing-Chocolate-Cake-Square-1.jpg" alt="Card image cap"></a>
                         <div class="card-block">
                             <h4 class="card-title">Chocolate Cake</h4>
-                            <p class="card-text">Price: $0.5</p>
+                            <p class="card-text">Price: $1.50</p>
                             <a href="#" data-name="Chocolate Cake" data-price="0.5" class="add-to-cart btn btn-primary">Add to cart</a>
                         </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card" style="width: 20rem;">
-                    <img class="card-img-top" src="https://www.thespruceeats.com/thmb/64vTHKy0mTQPwVq_FoUmJAaS8Cw=/400x300/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-126372759-5ad8ae58a9d4f9003d94e9a0.jpg" alt="Card image cap">
+                    <a class="btn"href="#popup2"><img class="card-img-top" src="https://www.thespruceeats.com/thmb/64vTHKy0mTQPwVq_FoUmJAaS8Cw=/400x300/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-126372759-5ad8ae58a9d4f9003d94e9a0.jpg" alt="Card image cap"></a>
                         <div class="card-block">
                             <h4 class="card-title">Yeast</h4>
                             <p class="card-text">Price: $1.22</p>
@@ -95,28 +165,86 @@
             </div>
             <div class="col">
                 <div class="card" style="width: 20rem;">
-                    <img class="card-img-top" src="https://i5.walmartimages.ca/images/Enlarge/044/708/999999-65633044708.jpg" alt="Card image cap">
+                    <a class="btn"href="#popup3"><img class="card-img-top" src="https://i5.walmartimages.ca/images/Enlarge/044/708/999999-65633044708.jpg" alt="Card image cap"></a>
                         <div class="card-block">
                             <h4 class="card-title">Brownie mix</h4>
-                            <p class="card-text">Price: $5</p>
+                            <p class="card-text">Price: $1.50</p>
                             <a href="#" data-name="Lemon" data-price="5" class="add-to-cart btn btn-primary">Add to cart</a>
                         </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card" style="width: 20rem;">
-                    <img class="card-img-top" src="http://cdn.sallysbakingaddiction.com/wp-content/uploads/2019/05/yellow-cupcakes-with-chocolate-frosting-sprinkles.jpg" alt="Card image cap">
+                    <a class="btn"href="#popup4"><img class="card-img-top" src="http://cdn.sallysbakingaddiction.com/wp-content/uploads/2019/05/yellow-cupcakes-with-chocolate-frosting-sprinkles.jpg" alt="Card image cap"></a>
                         <div class="card-block">
                             <h4 class="card-title">Cupcake</h4>
-                            <p class="card-text">Price: $1.22</p>
+                            <p class="card-text">Price: $2.15</p>
                             <a href="#" data-name="Yeast" data-price="1.22" class="add-to-cart btn btn-primary">Add to cart</a>
                         </div>
                 </div>
             </div>
         </div>
     </div>
-
-    
+    <!-- some good stuff -->
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Chocolate cake</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <img src="https://thestayathomechef.com/wp-content/uploads/2016/06/The-Most-Amazing-Chocolate-Cake-Square-1.jpg" width="150" height="150">
+                <b>Price: $1.50</b>
+                <br>
+                You'll look for new ways to celebrate when you have a box of Betty Crocker Super Moist Chocolate Fudge Cake Mix. This rich, dense and sinfully delicious cake makes a perfect dessert no matter the occasion. Simply mix with water, oil, and eggs, pour into a greased pan, and bake. Then cover in your favorite Betty Crocker icing, sprinkles, and candles, and you're ready to party! Use the cake baking mix as is or explore Betty Crocker recipes for a new take on this classic dessert. <br>
+                    <b>CAKE MIX:</b> Betty Crocker's super moist chocolate fudge cake mix is made with no preservatives and no artificial flavors.<br>
+                    <b>QUICK AND EASY:</b> Make cake without the usual mess; just add a few simple ingredients as directed and pop in the oven for a sweet treat any time of day.<br>
+                    <b>ENDLESS OPTIONS:</b> Prepare cake mix as is or head to BettyCrocker.com for creative dessert recipes the whole family will love.<br>
+                    <b>GREAT TASTE:</b> The Red Spoon is my promise of great taste, quality, and convenience; This is a product you and your family will enjoy, I guarantee it - Betty Crocker.<br>
+                    <b>BOX CONTAINS:</b> 1 box, 15.25 oz
+            </div>
+        </div>
+    </div>
+    <!-- good stuff 2 -->
+    <div id="popup2" class="overlay">
+        <div class="popup">
+            <h2>Yeast</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <img src= "https://www.thespruceeats.com/thmb/64vTHKy0mTQPwVq_FoUmJAaS8Cw=/400x300/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-126372759-5ad8ae58a9d4f9003d94e9a0.jpg" width="150" height="150">
+                <b>Price: $1.22</b>
+                <br>
+                Yeast is a single-cell organism, called Saccharomyces cerevisiae, which needs food, warmth, and moisture to thrive. It converts its food—sugar and starch—through fermentation, into carbon dioxide and alcohol. It's the carbon dioxide that makes baked goods rise.
+            </div>
+        </div>
+    </div>
+    <div id="popup3" class="overlay">
+        <div class="popup">
+            <h2>Brownie mix</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <img src="https://i5.walmartimages.ca/images/Enlarge/044/708/999999-65633044708.jpg" width="150" height="150">
+                <b>Price: $1.50</b>
+                <br>
+                Decadent brownies minus the effort? Betty Crocker Fudge Brownie Mix is your go-to for thick, fudgy brownies with an intense chocolate taste. Plus, they go from bowl to oven in minutes — simply mix with water, oil, and eggs, pour into a greased pan, and bake for ridiculously good brownies your whole family will enjoy. Use the brownie baking mix as is or explore Betty Crocker recipes for a new take on this classic dessert.<br>
+                BROWNIE MIX: Betty Crocker brownies and dessert bars make it easy to turn an ordinary day into something special.<br>
+                    <b>QUICK AND EASY:</b> Make brownies without the usual mess; just add a few simple ingredients as directed and pop in the oven for a sweet treat any time of day.<br>
+                    <b>ENDLESS OPTIONS:</b> Prepare brownie mix as is or head to BettyCrocker.com for creative dessert recipes the whole family will love.<br>
+                    <b>GREAT TASTE:</b> The Red Spoon is my promise of great taste, quality, and convenience; This is a product you and your family will enjoy, I guarantee it - Betty Crocker.<br>
+                    <b>BOX CONTAINS:</b> 1 box, 18.3 oz
+            </div>
+        </div>
+    </div>
+    <div id="popup4" class="overlay">
+        <div class="popup">
+            <h2>Cupcake</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <img src="http://cdn.sallysbakingaddiction.com/wp-content/uploads/2019/05/yellow-cupcakes-with-chocolate-frosting-sprinkles.jpg" width="150" height="150">
+                <b>Price: $2.15</b>
+                <br>
+                Cupcakes are small, tasty snack cakes that are favored for their portability and portion-control. They are batter cakes baked in a cup-shaped foil or temperature resistant paper
+            </div>
+        </div>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
