@@ -1,0 +1,17 @@
+<?xml version = "1.0"?>
+
+<order>
+    <order1>
+        <fname>Corey</fname>
+        <lname>Chan</lname>
+        <address>18114 Elkas Boulevard</address>
+        <date>10/12/2021</date>
+    </order1> 
+
+    <order2>
+        <fname>Felix</fname>
+        <lname>Wong</lname>
+        <address>2854 Rue Gaetan-Labreche</address>
+        <date>10/12/2021</date>
+    </order2>
+</order>
