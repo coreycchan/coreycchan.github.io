@@ -83,24 +83,32 @@
     overflow: auto;
     }
 
-@media screen and (max-width: 700px){
-  .box{
-    width: 70%;
-  }
-  .popup{
-    width: 70%;
-  }
-}
+    @media screen and (max-width: 700px){
+        .box{
+            width: 70%;
+        }
+        .popup{
+            width: 70%;
+        }
+    }
+
+    table, th, td {
+    border: 1px solid black;
+    border-collapse:collapse;
+    }
+    th, td {
+    padding: 5px;
+    }
 </style>
 
 <html lang="en" >
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="ISO-8859-1">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -126,59 +134,72 @@
         </div>
     </nav>
 
-  <div class="header">
-    <h1>Welcome to our Online Superstore</h1>
-    <h2>Order List</h2>
-    <br>
-  </div>
+    <div class="header">
+        <h1>Welcome to our Online Superstore</h1>
+        <h2>Order List</h2>
+        <br>
+    </div>
 
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="login.html">Login</a>
-    <a href="shoppingcart.html">Shopping Cart</a>
-    <a href="aisles.html">Aisles</a>
-    <a href="signup.html">Sign Up</a>
-    <a href="backstore_user_list.html">Back Store</a>
-    <a href="backstore_inventory.html">Inventory</a>
-    <a href="backstore_orderlist.html">Order List</a>
-  </div>
-  <span id="nav-burger" style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
-  onclick="openNav()">&#9776; MENU</span>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="login.html">Login</a>
+        <a href="shoppingcart.html">Shopping Cart</a>
+        <a href="aisles.html">Aisles</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="backstore_user_list.html">Back Store</a>
+        <a href="backstore_inventory.html">Inventory</a>
+        <a href="backstore_orderlist.html">Order List</a>
+    </div>
 
-  <script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-  }
+    <span id="nav-burger" style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
+    onclick="openNav()">&#9776; MENU</span>
 
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
-  </script>
 
-<h2>Order List: </h2>
 
-<main class = "card">
-    <div id = "test12"></div>
-</main>    
+    <h2>Order List: </h2>
+    <button type="button" onclick="loadXMLDoc()">Get Order List</button>
+    <br><br>
+    <table id = "demo"></table>
 
     <script>
-        $(document).ready(function(){
-            var mockData = [
-                {fname: "Corey", lname: "Chan", address: "18114 Elkas Boulevard", date: "10/12/2021"},
-                {fname: "Corey", lname: "Chan", address: "18114 Elkas Boulevard", date: "10/12/2021"}
-            ]
+        function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        }
 
-            $.each(mockData, function(i){
-                var templateString = '<article class = "card"><h5>First Name: ' + mockData[i].fname + '<h5><br><h5>Last Name: ' + mockData[i].lname + '<h5><br><h5>Address: ' + mockData[i].address + '<h5><br><h5>Date: ' + mockData[i].date + '<h5></article>';
-                $('#test12').append(templateString);
-            })
+        function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        }
 
-            $("#test12").on("load", function(){
-                alert("test");
-            });
-
-        });
+        function loadXMLDoc() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            myFunction(this);
+            }
+        };
+        xmlhttp.open("GET", "trial.xml", true);
+        xmlhttp.send();
+        }
+        function myFunction(xml) {
+        var i;
+        var xmlDoc = xml.responseXML;
+        var table="<tr><th>First Name</th><th>Last Name</th><th>Address</th><th>Date</th></tr>";
+        var x = xmlDoc.getElementsByTagName("ORDER");
+        for (i = 0; i <x.length; i++) {
+            table += "<tr><td>" +
+            x[i].getElementsByTagName("FNAME")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("LNAME")[0].childNodes[0].nodeValue +
+            "</td></tr>" + 
+             x[i].getElementsByTagName("ADDRESS")[0].childNodes[0].nodeValue +
+            "</td></tr>" + 
+             x[i].getElementsByTagName("DATE")[0].childNodes[0].nodeValue +
+            "</td></tr>" + 
+        }
+        document.getElementById("demo").innerHTML = table;
+        }
     </script>
+
 
 
 </body>

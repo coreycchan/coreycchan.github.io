@@ -1,103 +1,482 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+<style>
+    body {
+    padding-top: 80px;
+    }
+
+    .show-cart li {
+    display: flex;
+    }
+    .card {
+    margin-bottom: 20px;
+    }
+    .card-img-top {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+    }
+
+    .alight-right {
+    text-align: right;
+    border: 0;
+    }
+    /* new button */
+    .btn {
+    font-size: 1em;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #946B45;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    }
+    .btn:hover {
+    background: #946B45;
+    }
+    .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    }
+    .overlay:target {
+    visibility: visible;
+    opacity: 1;
+    }
+
+    .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    }
+
+    .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    }
+    .popup .close:hover {
+    color: #946B45;
+    }
+    .popup .content {
+    max-height: 30%;
+    overflow: auto;
+    }
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+</style>
+
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    <nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+        <div class = "align-right">
+            <button style = "float: right;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Shopping Cart (<span class="total-count"></span>)</button>
+            <button style = "float: right;" class="clear-cart btn btn-danger">Clear Cart</button>
+            <span id="nav-burger" style="float: left; color: black; font-size:30px;cursor:pointer"
+            onclick="openNav()">&#9776; MENU</span>
+        </div>
 
-  <button onclick="location.href = 'index.html'" style="background-color: transparent; position: absolute; top: 20px; right: 20px; font-size:35px">
-    <i class="fa fa-home"></i>
-  </button>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="login.html">Login</a>
+            <a href="shoppingcart.html">Shopping Cart</a>
+            <a href="aisles.html">Aisles</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="backstore_user_list.html">Back Store</a>
+            <a href="backstore_inventory.html">Inventory</a>
+            <a href="backstore_orderlist.html">Order List</a>
+        </div>
+    </nav>
 
-  <div class="header">
-    <h1>Aisles</h1>
-    <h2>Find your items quickly</h2>
-    <br>
-  </div>
+    <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
 
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="login.html">Login</a>
-    <a href="shoppingcart.html">Shopping Cart</a>
-    <a href="aisles.html">Aisles</a>
-    <a href="signup.html">Sign Up</a>
-    <a href="backstore_user_list.html">Back Store</a>
-    <a href="backstore_inventory.html">Inventory</a>
-    <a href="backstore_orderlist.html">Order List</a>
-  </div>
-  <span id="nav-burger" style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
-  onclick="openNav()">&#9776; MENU</span>
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
 
-  <script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-  }
-
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
-  </script>
-
-  <h2>Choose a Meat product:</h2>
-
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <h3>Ribeye
-          <div class="tooltip">
-            <i style="font-size:24px" class="fa">&#xf059;</i>
-            <span class="tooltiptext">Tender steaks for the whole family</span>
-          </div>
-        </h3>
-        <h5>Price: 5.00$</h5>
-        <img src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml" width="150" height="150">
+    <div class="header">
+        <h1>Aisles</h1>
+        <h2>Find your items quickly</h2>
         <br>
-      </div>
     </div>
 
-    <div class="column">
-      <div class="card">
-        <h3>Pork Chop
-          <div class="tooltip">
-            <i style="font-size:24px" class="fa">&#xf059;</i>
-            <span class="tooltiptext">Tender piece of pork, great for grilling</span>
-          </div>
-        </h3>
-        <h5>Price: 5.00$</h5>
-        <img src="https://www.foodnetwork.com/content/dam/images/food/video/2019/6/3/0/0181847-pork-chops-s4x3.jpg" width="150" height="150">
-        <br>
-      </div>
-    </div>
+    <h2>Choose a Meat product:</h2>
 
-    <div class="column">
-      <div class="card">
-        <h3>Chicken Breast
-          <div class="tooltip">
-            <i style="font-size:24px" class="fa">&#xf059;</i>
-            <span class="tooltiptext">Easy to cook, delicious for the whole family</span>
-          </div>
-        </h3>
-        <h5>Price: 5.00$</h5>
-        <img src="https://www.foodiecrush.com/wp-content/uploads/2018/08/Instant-Pot-Chicken-Breasts-foodiecrush.com-006A.jpg" width="150" height="150">
-        <br>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <a class="btn" href="#popup1"><img class="card-img-top" src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml" alt="Card image cap"></a>
+                        <div class="card-block">
+                            <h4 class="card-title">Ribeye</h4>
+                            <p class="card-text">Price: $11.50</p>
+                            <a href="#" data-name="Ribeye" data-price="11.50" class="add-to-cart btn btn-primary">Add to cart</a>
+                        </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <a class="btn"href="#popup2"><img class="card-img-top" src="https://www.foodnetwork.com/content/dam/images/food/video/2019/6/3/0/0181847-pork-chops-s4x3.jpg" alt="Card image cap"></a>
+                        <div class="card-block">
+                            <h4 class="card-title">Pork Chop</h4>
+                            <p class="card-text">Price: $11.22</p>
+                            <a href="#" data-name="Pork Chop" data-price="11.22" class="add-to-cart btn btn-primary">Add to cart</a>
+                        </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <a class="btn"href="#popup3"><img class="card-img-top" src="https://www.foodiecrush.com/wp-content/uploads/2018/08/Instant-Pot-Chicken-Breasts-foodiecrush.com-006A.jpg" alt="Card image cap"></a>
+                        <div class="card-block">
+                            <h4 class="card-title">Chicken Breast</h4>
+                            <p class="card-text">Price: $8.50</p>
+                            <a href="#" data-name="Chicken Breast" data-price="8.50" class="add-to-cart btn btn-primary">Add to cart</a>
+                        </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <a class="btn"href="#popup4"><img class="card-img-top" src="https://i5.walmartimages.ca/images/Large/329/793/6000203329793.jpg" alt="Card image cap"></a>
+                        <div class="card-block">
+                            <h4 class="card-title">Turkey</h4>
+                            <p class="card-text">Price: $20.22</p>
+                            <a href="#" data-name="Turkey" data-price="20.22" class="add-to-cart btn btn-primary">Add to cart</a>
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="column">
-      <div class="card">
-        <h3>Turkey
-          <div class="tooltip">
-            <i style="font-size:24px" class="fa">&#xf059;</i>
-            <span class="tooltiptext">Great turkey prices and sizes for the holidays</span>
-          </div>
-        </h3>
-        <h5>Price: 5.00$</h5>
-        <img src="https://i5.walmartimages.ca/images/Large/329/793/6000203329793.jpg" width="150" height="150">
-        <br>
-      </div>
+    <!-- some good stuff -->
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Chocolate cake</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <img src="https://thestayathomechef.com/wp-content/uploads/2016/06/The-Most-Amazing-Chocolate-Cake-Square-1.jpg" width="150" height="150">
+                <b>Price: $1.50</b>
+                <br>
+                You'll look for new ways to celebrate when you have a box of Betty Crocker Super Moist Chocolate Fudge Cake Mix. This rich, dense and sinfully delicious cake makes a perfect dessert no matter the occasion. Simply mix with water, oil, and eggs, pour into a greased pan, and bake. Then cover in your favorite Betty Crocker icing, sprinkles, and candles, and you're ready to party! Use the cake baking mix as is or explore Betty Crocker recipes for a new take on this classic dessert. <br>
+                    <b>CAKE MIX:</b> Betty Crocker's super moist chocolate fudge cake mix is made with no preservatives and no artificial flavors.<br>
+                    <b>QUICK AND EASY:</b> Make cake without the usual mess; just add a few simple ingredients as directed and pop in the oven for a sweet treat any time of day.<br>
+                    <b>ENDLESS OPTIONS:</b> Prepare cake mix as is or head to BettyCrocker.com for creative dessert recipes the whole family will love.<br>
+                    <b>GREAT TASTE:</b> The Red Spoon is my promise of great taste, quality, and convenience; This is a product you and your family will enjoy, I guarantee it - Betty Crocker.<br>
+                    <b>BOX CONTAINS:</b> 1 box, 15.25 oz
+            </div>
+        </div>
     </div>
-  </div>
+    <!-- good stuff 2 -->
+    <div id="popup2" class="overlay">
+        <div class="popup">
+            <h2>Yeast</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <img src= "https://www.thespruceeats.com/thmb/64vTHKy0mTQPwVq_FoUmJAaS8Cw=/400x300/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-126372759-5ad8ae58a9d4f9003d94e9a0.jpg" width="150" height="150">
+                <b>Price: $1.22</b>
+                <br>
+                Yeast is a single-cell organism, called Saccharomyces cerevisiae, which needs food, warmth, and moisture to thrive. It converts its food—sugar and starch—through fermentation, into carbon dioxide and alcohol. It's the carbon dioxide that makes baked goods rise.
+            </div>
+        </div>
+    </div>
+    <div id="popup3" class="overlay">
+        <div class="popup">
+            <h2>Brownie mix</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <img src="https://i5.walmartimages.ca/images/Enlarge/044/708/999999-65633044708.jpg" width="150" height="150">
+                <b>Price: $1.50</b>
+                <br>
+                Decadent brownies minus the effort? Betty Crocker Fudge Brownie Mix is your go-to for thick, fudgy brownies with an intense chocolate taste. Plus, they go from bowl to oven in minutes — simply mix with water, oil, and eggs, pour into a greased pan, and bake for ridiculously good brownies your whole family will enjoy. Use the brownie baking mix as is or explore Betty Crocker recipes for a new take on this classic dessert.<br>
+                BROWNIE MIX: Betty Crocker brownies and dessert bars make it easy to turn an ordinary day into something special.<br>
+                    <b>QUICK AND EASY:</b> Make brownies without the usual mess; just add a few simple ingredients as directed and pop in the oven for a sweet treat any time of day.<br>
+                    <b>ENDLESS OPTIONS:</b> Prepare brownie mix as is or head to BettyCrocker.com for creative dessert recipes the whole family will love.<br>
+                    <b>GREAT TASTE:</b> The Red Spoon is my promise of great taste, quality, and convenience; This is a product you and your family will enjoy, I guarantee it - Betty Crocker.<br>
+                    <b>BOX CONTAINS:</b> 1 box, 18.3 oz
+            </div>
+        </div>
+    </div>
+    <div id="popup4" class="overlay">
+        <div class="popup">
+            <h2>Cupcake</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <img src="http://cdn.sallysbakingaddiction.com/wp-content/uploads/2019/05/yellow-cupcakes-with-chocolate-frosting-sprinkles.jpg" width="150" height="150">
+                <b>Price: $2.15</b>
+                <br>
+                Cupcakes are small, tasty snack cakes that are favored for their portability and portion-control. They are batter cakes baked in a cup-shaped foil or temperature resistant paper
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <table class="show-cart table">
+            
+            </table>
+            <div>Total price: $<span class="total-cart"></span></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Order now</button>
+        </div>
+        </div>
+    </div>
+    </div> 
 </body>
+<script>
+    // ************************************************
+    // Shopping Cart API
+    // ************************************************
+
+    var shoppingCart = (function() {
+    // =============================
+    // Private methods and propeties
+    // =============================
+    cart = [];
+    
+    // Constructor
+    function Item(name, price, count) {
+        this.name = name;
+        this.price = price;
+        this.count = count;
+    }
+    
+    // Save cart
+    function saveCart() {
+        sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
+    }
+    
+        // Load cart
+    function loadCart() {
+        cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+    }
+    if (sessionStorage.getItem("shoppingCart") != null) {
+        loadCart();
+    }
+    
+
+    // =============================
+    // Public methods and propeties
+    // =============================
+    var obj = {};
+    
+    // Add to cart
+    obj.addItemToCart = function(name, price, count) {
+        for(var item in cart) {
+        if(cart[item].name === name) {
+            cart[item].count ++;
+            saveCart();
+            return;
+        }
+        }
+        var item = new Item(name, price, count);
+        cart.push(item);
+        saveCart();
+    }
+    // Set count from item
+    obj.setCountForItem = function(name, count) {
+        for(var i in cart) {
+        if (cart[i].name === name) {
+            cart[i].count = count;
+            break;
+        }
+        }
+    };
+    // Remove item from cart
+    obj.removeItemFromCart = function(name) {
+        for(var item in cart) {
+            if(cart[item].name === name) {
+            cart[item].count --;
+            if(cart[item].count === 0) {
+                cart.splice(item, 1);
+            }
+            break;
+            }
+        }
+        saveCart();
+    }
+
+    // Remove all items from cart
+    obj.removeItemFromCartAll = function(name) {
+        for(var item in cart) {
+        if(cart[item].name === name) {
+            cart.splice(item, 1);
+            break;
+        }
+        }
+        saveCart();
+    }
+
+    // Clear cart
+    obj.clearCart = function() {
+        cart = [];
+        saveCart();
+    }
+
+    // Count cart 
+    obj.totalCount = function() {
+        var totalCount = 0;
+        for(var item in cart) {
+        totalCount += cart[item].count;
+        }
+        return totalCount;
+    }
+
+    // Total cart
+    obj.totalCart = function() {
+        var totalCart = 0;
+        for(var item in cart) {
+        totalCart += cart[item].price * cart[item].count;
+        }
+        return Number(totalCart.toFixed(2));
+    }
+
+    // List cart
+    obj.listCart = function() {
+        var cartCopy = [];
+        for(i in cart) {
+        item = cart[i];
+        itemCopy = {};
+        for(p in item) {
+            itemCopy[p] = item[p];
+
+        }
+        itemCopy.total = Number(item.price * item.count).toFixed(2);
+        cartCopy.push(itemCopy)
+        }
+        return cartCopy;
+    }
+
+    // cart : Array
+    // Item : Object/Class
+    // addItemToCart : Function
+    // removeItemFromCart : Function
+    // removeItemFromCartAll : Function
+    // clearCart : Function
+    // countCart : Function
+    // totalCart : Function
+    // listCart : Function
+    // saveCart : Function
+    // loadCart : Function
+    return obj;
+    })();
+
+
+    // *****************************************
+    // Triggers / Events
+    // ***************************************** 
+    // Add item
+    $('.add-to-cart').click(function(event) {
+    event.preventDefault();
+    var name = $(this).data('name');
+    var price = Number($(this).data('price'));
+    shoppingCart.addItemToCart(name, price, 1);
+    displayCart();
+    });
+
+    // Clear items
+    $('.clear-cart').click(function() {
+    shoppingCart.clearCart();
+    displayCart();
+    });
+
+
+    function displayCart() {
+    var cartArray = shoppingCart.listCart();
+    var output = "";
+    for(var i in cartArray) {
+        output += "<tr>"
+        + "<td>" + cartArray[i].name + "</td>" 
+        + "<td>(" + cartArray[i].price + ")</td>"
+        + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
+        + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
+        + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
+        + "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"
+        + " = " 
+        + "<td>" + cartArray[i].total + "</td>" 
+        +  "</tr>";
+    }
+    $('.show-cart').html(output);
+    $('.total-cart').html(shoppingCart.totalCart());
+    $('.total-count').html(shoppingCart.totalCount());
+    }
+
+    // Delete item button
+
+    $('.show-cart').on("click", ".delete-item", function(event) {
+    var name = $(this).data('name')
+    shoppingCart.removeItemFromCartAll(name);
+    displayCart();
+    })
+
+
+    // -1
+    $('.show-cart').on("click", ".minus-item", function(event) {
+    var name = $(this).data('name')
+    shoppingCart.removeItemFromCart(name);
+    displayCart();
+    })
+    // +1
+    $('.show-cart').on("click", ".plus-item", function(event) {
+    var name = $(this).data('name')
+    shoppingCart.addItemToCart(name);
+    displayCart();
+    })
+
+    // Item count input
+    $('.show-cart').on("change", ".item-count", function(event) {
+    var name = $(this).data('name');
+    var count = Number($(this).val());
+    shoppingCart.setCountForItem(name, count);
+    displayCart();
+    });
+
+    displayCart();
+</script>
 </html>
