@@ -1,0 +1,96 @@
+<?xml version = "1.0" encoding="utf-8"?>
+
+<inventory>
+    <item>
+        <name>Gummy Bears</name>
+        <price>1.50$</price>
+        <quantity>10</quantity>
+    </item>
+
+    <item>
+        <name>Chocolate Bar</name>
+        <price>1.22$</price>
+        <quantity>10</quantity>
+    </item>
+
+    <item>
+        <name>Bear Paw</name>
+        <price>1.50$</price>
+        <quantity>10</quantity>
+    </item>
+
+    <item>
+        <name>Rice Cracker</name>
+        <price>2.15$</price>
+        <quantity>10</quantity>
+    </item>
+
+    <item>
+        <name>Chocolate Cake</name>
+        <price>1.50$</price>
+        <quantity>10</quantity>
+    </item>
+
+    <item>
+        <name>Yeast</name>
+        <price>1.22$</price>
+        <quantity>10</quantity>
+    </item>
+
+    <item>
+        <name>Brownie Mix</name>
+        <price>1.50$</price>
+        <quantity>10</quantity>
+    </item>
+
+    <item>
+        <name>Cupcake</name>
+        <price>2.15$</price>
+        <quantity>10</quantity>
+    </item>
+
+    <item>
+        <name>Ribeye</name>
+        <price>11.50$</price>
+        <quantity>10</quantity>
+    </item>
+
+    <item>
+        <name>Pork Chop</name>
+        <price>11.22$</price>
+        <quantity>10</quantity>
+    </item>
+
+    <item>
+        <name>Chicken Breast</name>
+        <price>8.50$</price>
+        <quantity>10</quantity>
+    </item>
+
+    <item>
+        <name>Turkey</name>
+        <price>20.22$</price>
+        <quantity>10</quantity>
+    </item>
+    
+    <item>
+        <name>Milk</name>
+        <price>5.35$</price>
+        <quantity>10</quantity>
+    </item>
+    <item>
+        <name>Feta Cheese</name>
+        <price>6.22$</price>
+        <quantity>10</quantity>
+    </item>
+    <item>
+        <name>Mozarella</name>
+        <price>4.20$</price>
+        <quantity>10</quantity>
+    </item>
+    <item>
+        <name>Yogurt</name>
+        <price>2.15$</price>
+        <quantity>10</quantity>
+    </item>
+</inventory>

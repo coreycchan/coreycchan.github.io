@@ -2,6 +2,7 @@
 
 <orderlist>
     <order>
+        <orderNumber>0001</orderNumber>
         <fname>Corey</fname>
         <lname>Chan</lname>
         <address>18114 Elkas Boulevard</address>
@@ -9,6 +10,7 @@
     </order>
 
     <order>
+        <orderNumber>0002</orderNumber>
         <fname>Felix</fname>
         <lname>Wong</lname>
         <address>2456 Gaetan-Labreche</address>
@@ -16,16 +18,19 @@
     </order>
 
     <order>
+        <orderNumber>0003</orderNumber>
         <fname>Felix</fname>
         <lname>Wong</lname>
         <address>2456 Gaetan-Labreche</address>
         <date>10/12/2021</date>
     </order>
-    
+
     <order>
+        <orderNumber>0004</orderNumber>
         <fname>Corey</fname>
         <lname>Chan</lname>
         <address>18114 Elkas Boulevard</address>
         <date>10/12/2021</date>
     </order>
 </orderlist>
+

@@ -1,475 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<style>
+    body {
+    padding-top: 80px;
+    }
+
+    .show-cart li {
+    display: flex;
+    }
+    .card {
+    margin-bottom: 20px;
+    }
+    .card-img-top {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+    }
+
+    .alight-right {
+    text-align: right;
+    border: 0;
+    }
+    /* new button */
+    .btn {
+    font-size: 1em;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #946B45;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    }
+    .btn:hover {
+    background: #946B45;
+    }
+    .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    }
+    .overlay:target {
+    visibility: visible;
+    opacity: 1;
+    }
+
+    .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    }
+
+    .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    }
+    .popup .close:hover {
+    color: #946B45;
+    }
+    .popup .content {
+    max-height: 30%;
+    overflow: auto;
+    }
+
+    @media screen and (max-width: 700px){
+        .box{
+            width: 70%;
+        }
+        .popup{
+            width: 70%;
+        }
+    }
+
+  table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+  
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+  
+        tr:nth-child(even) {
+            background-color: #7ce2af
+        }
+  
+        th {
+            background-color: #7c0f65;
+            color: white;
+        }
+  
+  
+        .button:hover {
+            color: black;
+            background: white;
+        }
+</style>
+
+<html lang="en" >
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+  
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    inventoryDetails(this);
+                }
+            };
+  
+            // employee.xml is the external xml file
+            xmlhttp.open("GET", "inventory.xml", true);
+            xmlhttp.send();
+
+            function inventoryDetails(xml) {
+                var i;
+                var xmlDoc = xml.responseXML;
+                var table =
+                    `<tr><th>Item Name</th><th>Price</th>
+                        <th>Quantity</th>
+                    </tr>`;
+                var x = xmlDoc.getElementsByTagName("item");
+    
+                // Start to fetch the data by using TagName 
+                for (i = 0; i < x.length; i++) {
+                    table += "<tr><td>" +
+                        x[i].getElementsByTagName("name")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                        x[i].getElementsByTagName("price")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                        x[i].getElementsByTagName("quantity")[0]
+                        .childNodes[0].nodeValue + "</td><tr>";
+                }
+    
+                // Print the xml data in table form
+                document.getElementById("id").innerHTML = table;
+            }
+        }
+    </script>
 </head>
+
 <body>
-  <button onclick="location.href = 'index.html'" style="background-color: transparent; position: absolute; top: 20px; right: 20px; font-size:35px">
-    <i class="fa fa-home"></i>
-  </button>
+    <nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+        <div class = "align-right">
+            <span id="nav-burger" style="float: left; color: black; font-size:30px;cursor:pointer"
+            onclick="openNav()">&#9776; MENU</span>
+        </div>
 
-  <div class="header">
-    <h1>Inventory</h1>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="login.html">Login</a>
+            <a href="shoppingcart.html">Shopping Cart</a>
+            <a href="aisles.html">Aisles</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="backstore_user_list.html">Back Store</a>
+            <a href="backstore_inventory.html">Inventory</a>
+            <a href="backstore_orderlist.html">Order List</a>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>Welcome to our Online Superstore</h1>
+        <h2>Inventory</h2>
+        <br>
+    </div>
+
+    <span id="nav-burger" style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
+    onclick="openNav()">&#9776; MENU</span>
+
+
+
+    <h2>Inventory List: </h2>
     <br>
-  </div>
+    <button type="button" class="button" onclick="loadXMLDoc()">Get Inventory</button>
+    <br>
+    <table id = "id"></table>
 
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="login.html">Login</a>
-    <a href="shoppingcart.html">Shopping Cart</a>
-    <a href="aisles.html">Aisles</a>
-    <a href="signup.html">Sign Up</a>
-    <a href="backstore_user_list.html">Back Store</a>
-    <a href="backstore_inventory.html">Inventory</a>
-    <a href="backstore_orderlist.html">Order List</a>
-  </div>
-  <span id="nav-burger" style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
-  onclick="openNav()">&#9776; MENU</span>
 
-  <script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-  }
+    <script>
+        function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        }
 
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
-  </script>
+        function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 
-  <h2>Snacks Inventory</h2>
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Gummy bears <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">A sugary treat in the shape of a bear</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://i.pinimg.com/736x/8f/b8/21/8fb8210b527db4b476908015deba55bb.jpg" width="50"
-        height="50">
-        <br>
-      </div>
-    </div>
 
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Chocolate bar <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">A milky delight that will put a smile on everyones face</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://static7.depositphotos.com/1007989/759/i/950/depositphotos_7599549-stock-photo-baking-icon.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
 
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Bear paws <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">An amazing snack for kids during lunch</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://thumbs.dreamstime.com/b/dairy-products-milk-food-cartoon-vector-illustration-isolated-white-background-94255658.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
 
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Rice cracker <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">A suprisingly low carb snack that is an ideal replacements for chips</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://image.shutterstock.com/image-vector/vector-illustration-meat-260nw-133260383.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Granola bar <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">A quick source of energy for the move</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://thumbs.dreamstime.com/b/frozen-food-icon-supermarket-shopping-mall-related-vector-illustration-216864437.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Cookies <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">A buttery soft delight </span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://www.nicepng.com/png/detail/211-2118840_food-plants-cartoon-vegetables-eggplant-healthy-eggplant-clip.png"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Chips <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">Although unhealthy, it is a great snack to share amongst your friends</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://image.shutterstock.com/image-vector/toasting-beer-glasses-vector-illustration-260nw-705945535.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Nuts <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">A great source of fat and protein for athletes</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://thumbs.dreamstime.com/z/cartoon-house-vector-illustration-white-background-56861518.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-  </div>
-
-  <h2>Baking Inventory</h2>
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Cupcake <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">A perfect pastry for a sweet tooth</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="http://cdn.sallysbakingaddiction.com/wp-content/uploads/2019/05/yellow-cupcakes-with-chocolate-frosting-sprinkles.jpg" width="50"
-        height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Chocolate Cake <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">Chocolate cake, soft and gooey</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://thestayathomechef.com/wp-content/uploads/2016/06/The-Most-Amazing-Chocolate-Cake-Square-1.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Yeast <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">Yeast to make your bread rise!</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://www.thespruceeats.com/thmb/64vTHKy0mTQPwVq_FoUmJAaS8Cw=/400x300/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-126372759-5ad8ae58a9d4f9003d94e9a0.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Brownie mix <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">Fun and delicious brownies for the whole family</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://i5.walmartimages.ca/images/Enlarge/044/708/999999-65633044708.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-  </div>
-
-  <h2>Dairy Inventory</h2>
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Milk <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">2% milk to make your bones strong</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2020/02/glass-of-milk.jpg?quality=82&strip=1&resize=640%2C360" width="50"
-        height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Feta Cheese <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">Crumbly cheese, perfect for a salad</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://myquietkitchen.com/wp-content/uploads/2021/04/Vegan-Feta-Cheese-Oil-Free-500x375.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Mozarella <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">Grated cheese for all kinds of toppings</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="http://www.mayrand.ca/globalassets/mayrand/catalog-mayrand/produits-laitiers/09114_mozzarella-rapee-20-racolli.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Yogurt <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">Healthy and delicious fruity yogurt</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://simplyhomecooked.com/wp-content/uploads/2021/08/yogurt-parfait-4.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-  </div>
-
-  <h2>Meats Inventory</h2>
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Ribeye <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">Tender steaks for the whole family</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml" width="50"
-        height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Pork Chop <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">Tender piece of pork, great for grilling</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://www.foodnetwork.com/content/dam/images/food/video/2019/6/3/0/0181847-pork-chops-s4x3.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Chicken Breast <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">Easy to cook, delicious for the whole family</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://www.foodiecrush.com/wp-content/uploads/2018/08/Instant-Pot-Chicken-Breasts-foodiecrush.com-006A.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <div class="w3-dropdown-hover">
-          <button class="w3-button w3-black w3-small">Select</button>
-          <div class="w3-dropdown-content w3-bar-block w3-border">
-            <a href="#" class="w3-bar-item w3-button w3-small">Add</a>
-            <a href="backstore_inventory_edit.html" class="w3-bar-item w3-button w3-small">Edit</a>
-            <a href="#" class="w3-bar-item w3-button w3-small">Delete</a>
-          </div>
-        </div>
-        <h3>Turkey <div class="tooltip"><i style="font-size:24px" class="fa">&#xf059;</i>
-          <span class="tooltiptext">Great turkey prices and sizes for the holidays</span>
-        </div></h3>
-        <h5>Price: 5.00$</h5>
-        <h5>Quantity: 100</h5>
-        <img src="https://i5.walmartimages.ca/images/Large/329/793/6000203329793.jpg"
-        width="50" height="50">
-        <br>
-      </div>
-    </div>
-  </div>
 
 </body>
 </html>
