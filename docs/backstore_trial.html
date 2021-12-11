@@ -92,13 +92,31 @@
         }
     }
 
-    table, th, td {
-    border: 1px solid black;
-    border-collapse:collapse;
-    }
-    th, td {
-    padding: 5px;
-    }
+  table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+  
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+  
+        tr:nth-child(even) {
+            background-color: #7ce2af
+        }
+  
+        th {
+            background-color: #7c0f65;
+            color: white;
+        }
+  
+  
+        .button:hover {
+            color: black;
+            background: white;
+        }
 </style>
 
 <html lang="en" >
@@ -113,6 +131,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+  
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    orderDetails(this);
+                }
+            };
+  
+            // employee.xml is the external xml file
+            xmlhttp.open("GET", "trial.xml", true);
+            xmlhttp.send();
+
+            function orderDetails(xml) {
+                var i;
+                var xmlDoc = xml.responseXML;
+                var table =
+                    `<tr><th>Firstname</th><th>Lastname</th>
+                        <th>Address</th><th>Date</th>
+                    </tr>`;
+                var x = xmlDoc.getElementsByTagName("order");
+    
+                // Start to fetch the data by using TagName 
+                for (i = 0; i < x.length; i++) {
+                    table += "<tr><td>" +
+                        x[i].getElementsByTagName("fname")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                        x[i].getElementsByTagName("lname")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                        x[i].getElementsByTagName("address")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                        x[i].getElementsByTagName("date")[0]
+                        .childNodes[0].nodeValue + "</td><tr>";
+                }
+    
+                // Print the xml data in table form
+                document.getElementById("id").innerHTML = table;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -157,9 +219,11 @@
 
 
     <h2>Order List: </h2>
-    <button type="button" onclick="loadXMLDoc()">Get Order List</button>
-    <br><br>
-    <table id = "demo"></table>
+    <br>
+    <button type="button" class="button" onclick="loadXMLDoc()">Get Order List</button>
+    <br>
+    <table id = "id"></table>
+
 
     <script>
         function openNav() {
@@ -169,36 +233,9 @@
         function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         }
-
-        function loadXMLDoc() {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-            myFunction(this);
-            }
-        };
-        xmlhttp.open("GET", "trial.xml", true);
-        xmlhttp.send();
-        }
-        function myFunction(xml) {
-        var i;
-        var xmlDoc = xml.responseXML;
-        var table="<tr><th>First Name</th><th>Last Name</th><th>Address</th><th>Date</th></tr>";
-        var x = xmlDoc.getElementsByTagName("ORDER");
-        for (i = 0; i <x.length; i++) {
-            table += "<tr><td>" +
-            x[i].getElementsByTagName("FNAME")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[i].getElementsByTagName("LNAME")[0].childNodes[0].nodeValue +
-            "</td></tr>" + 
-             x[i].getElementsByTagName("ADDRESS")[0].childNodes[0].nodeValue +
-            "</td></tr>" + 
-             x[i].getElementsByTagName("DATE")[0].childNodes[0].nodeValue +
-            "</td></tr>" + 
-        }
-        document.getElementById("demo").innerHTML = table;
-        }
     </script>
+
+
 
 
 

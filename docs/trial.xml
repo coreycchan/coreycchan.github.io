@@ -1,4 +1,4 @@
-<?xml version = "1.0"?>
+<?xml version = "1.0" encoding="utf-8"?>
 
 <orderlist>
     <order>
@@ -12,6 +12,20 @@
         <fname>Felix</fname>
         <lname>Wong</lname>
         <address>2456 Gaetan-Labreche</address>
+        <date>10/12/2021</date>
+    </order>
+
+    <order>
+        <fname>Felix</fname>
+        <lname>Wong</lname>
+        <address>2456 Gaetan-Labreche</address>
+        <date>10/12/2021</date>
+    </order>
+    
+    <order>
+        <fname>Corey</fname>
+        <lname>Chan</lname>
+        <address>18114 Elkas Boulevard</address>
         <date>10/12/2021</date>
     </order>
 </orderlist>
