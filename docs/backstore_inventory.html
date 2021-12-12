@@ -153,7 +153,7 @@
                 var xmlDoc = xml.responseXML;
                 var table =
                     `<tr><th>Item Name</th><th>Price</th>
-                        <th>Quantity</th>
+                        <th>Quantity</th><th>Edit</th>
                     </tr>`;
                 var x = xmlDoc.getElementsByTagName("item");
     
@@ -165,7 +165,8 @@
                         x[i].getElementsByTagName("price")[0]
                         .childNodes[0].nodeValue + "</td><td>" +
                         x[i].getElementsByTagName("quantity")[0]
-                        .childNodes[0].nodeValue + "</td><tr>";
+                        .childNodes[0].nodeValue + "</td><td>" + 
+                        '<button onclick="window.open="backstore_inventory_edit.html"">Edit</button></td><tr>';
                 }
     
                 // Print the xml data in table form
@@ -184,6 +185,7 @@
 
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
             <a href="login.html">Login</a>
             <a href="shoppingcart.html">Shopping Cart</a>
             <a href="aisles.html">Aisles</a>
@@ -206,12 +208,13 @@
 
 
     <h2>Inventory List: </h2>
+    <button onclick = "window.location.href='backstore_inventory_add.html'">Add</button>
     <br>
     <button type="button" class="button" onclick="loadXMLDoc()">Get Inventory</button>
     <br>
     <table id = "id"></table>
 
-
+     
     <script>
         function openNav() {
         document.getElementById("mySidenav").style.width = "250px";

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<style>
+ table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+  
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+  
+        tr:nth-child(even) {
+            background-color: #7ce2af
+        }
+  
+        th {
+            background-color: #7c0f65;
+            color: white;
+        }
+  
+  
+        .button:hover {
+            color: black;
+            background: white;
+        }
+</style>
+<html>
+<head>
+    <script>
+        function loadXMLDoc() {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () {
+        
+                        // Request finished and response 
+                        // is ready and Status is "OK"
+                        if (this.readyState == 4 && this.status == 200) {
+                            inventoryDetails(this);
+                        }
+                    };
+        
+                    // employee.xml is the external xml file
+                    xmlhttp.open("GET", "inventory.xml", true);
+                    xmlhttp.send();
+
+                    function inventoryDetails(xml) {
+                        var item = document.createElement("item");
+
+                        var name = document.createElement("name");
+                        name.appendChild(document.createTextNode("Skittles"));
+                        var price = document.createElement("price");
+                        price.appendChild(document.createTextNode("1.50$"));
+                        var quantity = document.createElement("quantity");
+                        quantity.appendChild(document.createTextNode("10"));
+                        
+                        item.appendChild(name);
+                        item.appendChild(price);
+                        item.appendChild(quantity);
+                        
+                        document.getElementsByTagName("inventory")[0].appendChild(item);
+                    }
+                }
+    </script>
+
+</head>
+<body onload="loadXMLDoc()">
+
+</body>
+</html>
