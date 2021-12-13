@@ -153,7 +153,7 @@
                 var xmlDoc = xml.responseXML;
                 var table =
                     `<tr><th>Firstname</th><th>Lastname</th>
-                        <th>Address</th>
+                        <th>Address</th><th>Edit</th>
                     </tr>`;
                 var x = xmlDoc.getElementsByTagName("user");
     
@@ -165,7 +165,9 @@
                         x[i].getElementsByTagName("lname")[0]
                         .childNodes[0].nodeValue + "</td><td>" +
                         x[i].getElementsByTagName("address")[0]
-                        .childNodes[0].nodeValue + "</td><tr>";
+                        .childNodes[0].nodeValue + "</td><td>" +
+                        '<button onclick="window.location.href="backstore_inventory_edit.html"">Edit</button></td><tr>'; 
+
                 }
     
                 // Print the xml data in table form
@@ -207,6 +209,9 @@
 
 
     <h2>User List: </h2>
+    <button onclick = "window.location.href='backstore_add_user.html'">Add</button>
+    <br>
+    <button onclick = "window.location.href='backstore_edit_user.html'">Edit</button>
     <br>
     <button type="button" class="button" onclick="loadXMLDoc()">Get User List</button>
     <br>

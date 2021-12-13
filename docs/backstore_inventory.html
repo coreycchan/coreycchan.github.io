@@ -166,7 +166,7 @@
                         .childNodes[0].nodeValue + "</td><td>" +
                         x[i].getElementsByTagName("quantity")[0]
                         .childNodes[0].nodeValue + "</td><td>" + 
-                        '<button onclick="window.open="backstore_inventory_edit.html"">Edit</button></td><tr>';
+                        '<button onclick="window.location.href="backstore_inventory_edit.html"">Edit</button></td><tr>';
                 }
     
                 // Print the xml data in table form
@@ -209,6 +209,8 @@
 
     <h2>Inventory List: </h2>
     <button onclick = "window.location.href='backstore_inventory_add.html'">Add</button>
+    <br>
+    <button onclick = "window.location.href='backstore_inventory_edit.html'">Edit</button>
     <br>
     <button type="button" class="button" onclick="loadXMLDoc()">Get Inventory</button>
     <br>

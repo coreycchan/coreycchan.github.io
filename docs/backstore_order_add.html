@@ -1,79 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<style>
+    body {
+    padding-top: 80px;
+    }
+
+    .show-cart li {
+    display: flex;
+    }
+    .card {
+    margin-bottom: 20px;
+    }
+    .card-img-top {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+    }
+
+    .alight-right {
+    text-align: right;
+    border: 0;
+    }
+    /* new button */
+    .btn {
+    font-size: 1em;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #946B45;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    }
+    .btn:hover {
+    background: #946B45;
+    }
+    .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    }
+    .overlay:target {
+    visibility: visible;
+    opacity: 1;
+    }
+
+    .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    }
+
+    .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    }
+    .popup .close:hover {
+    color: #946B45;
+    }
+    .popup .content {
+    max-height: 30%;
+    overflow: auto;
+    }
+
+    @media screen and (max-width: 700px){
+        .box{
+            width: 70%;
+        }
+        .popup{
+            width: 70%;
+        }
+    }
+
+  table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+  
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+  
+        tr:nth-child(even) {
+            background-color: #7ce2af
+        }
+  
+        th {
+            background-color: #7c0f65;
+            color: white;
+        }
+  
+  
+        .button:hover {
+            color: black;
+            background: white;
+        }
+</style>
+
+<html lang="en" >
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script>
-  function getData(){
-    var orderNumber = document.getElementById("ordernumber").value;
-    var fname = document.getElementById("fname").value;
-    var lname = document.getElementById("lname").value;
-    var address = document.getElementById("address").value;
-    var date = document.getElementById("date").value;
-
-    var ordersArray = JSON.parse(localStorage.getItem("orders"));
-    var newOrder = {"order": orderNumber, "fname": fname, "lname": lname, "address": address, "date": date};
-    ordersArray.push(newOrder);
-    localStorage.setItem("orders", JSON.stringify(ordersArray));
-  }
-  </script>
+   
 </head>
 
 <body>
+    <nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+        <div class = "align-right">
+            <span id="nav-burger" style="float: left; color: black; font-size:30px;cursor:pointer"
+            onclick="openNav()">&#9776; MENU</span>
+        </div>
 
-  <button onclick="location.href = 'index.html'" style="background-color: transparent; position: absolute; top: 20px; right: 20px; font-size:35px">
-    <i class="fa fa-home"></i>
-  </button>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="shoppingcart.html">Shopping Cart</a>
+            <a href="aisles.html">Aisles</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="backstore_user_list.html">Back Store</a>
+            <a href="backstore_inventory.html">Inventory</a>
+            <a href="backstore_orderlist.html">Order List</a>
+        </div>
+    </nav>
 
-  <div class="header">
-    <h1>Welcome to our Online Superstore</h1>
-    <h2>Order Add</h2>
-    <br>
-  </div>
+    <div class="header">
+        <h1>Welcome to our Online Superstore</h1>
+        <h2>User List</h2>
+        <br>
+    </div>
 
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="login.html">Login</a>
-    <a href="shoppingcart.html">Shopping Cart</a>
-    <a href="aisles.html">Aisles</a>
-    <a href="signup.html">Sign Up</a>
-    <a href="backstore_user_list.html">Back Store</a>
-    <a href="backstore_inventory.html">Inventory</a>
-    <a href="backstore_orderlist.html">Order List</a>
-  </div>
-  <span id="nav-burger" style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
-  onclick="openNav()">&#9776; MENU</span>
+    <span id="nav-burger" style="position: fixed; top: 20px; left: 20px; color: black; font-size:30px;cursor:pointer"
+    onclick="openNav()">&#9776; MENU</span>
 
-  <script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-  }
 
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
-  </script>
 
-  <form action = "backstore_orderlist.html">
-    <label for="ordernumber">Order Number:</label><br>
-    <input type="text" id="ordernumber" name="ordernumber" value=""><br>
+    <h2>Add Order: </h2>
+    <form id="myForm">
+        <label for="ordernumber">Order Number:</label><br>
+        <input type="number" id = "ordernumber" value=""><br>
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="name" value=""><br>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="name" value=""><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="quantity" value=""><br>
+        <label for="date">Date:</label><br>
+        <input type="date" id="date" name="date" value=""><br><br>
+        <button type="submit" onclick ="loadXMLDoc()">Save</button>
+    </form>
 
-    <label for="fname">First Name:</label><br>
-    <input type="text" id="fname" name="fname" value=""><br>
+     
+    <script>
+        function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        }
 
-    <label for="lname">Last Name:</label><br>
-    <input type="text" id="lname" name="lname" value=""><br>
+        function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 
-    <label for="address">Address:</label><br>
-    <input type="text" id="address" name="address" value=""><br>
 
-    <label for="date">Date of Delivery:</label><br>
-    <input type="date" id="date" name="date" value=""><br><br>
 
-    <input type="submit" value = "Submit" onclick = "getData()">
-  </form>
+
 
 </body>
 </html>
